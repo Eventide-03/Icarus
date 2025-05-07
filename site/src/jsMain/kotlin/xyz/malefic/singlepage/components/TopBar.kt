@@ -15,7 +15,7 @@ fun TopBar() {
             .fillMaxWidth()
             .height(9.33.percent)
             .backgroundColor(Color("#252f41"))
-            .boxShadow(offsetX = 0.px, offsetY = 4.px, blurRadius = 3.px, spreadRadius = 1.px, color = rgba(0, 0, 0, 0.10))
+            .boxShadow(offsetX = 4.px, offsetY = 4.px, blurRadius = 3.px, spreadRadius = 1.px, color = rgba(0, 0, 0, 0.10))
             .position(Position.Fixed)
             .zIndex(1000)
             .top(0.px)
