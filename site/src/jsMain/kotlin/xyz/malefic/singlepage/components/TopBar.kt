@@ -15,7 +15,7 @@ fun TopBar() {
             .fillMaxWidth()
             .height(9.33.percent)
             .backgroundColor(Color("#252f41"))
-            .boxShadow(offsetX = 4.px, offsetY = 4.px, blurRadius = 3.px, spreadRadius = 1.px, color = rgba(0, 0, 0, 0.10))
+            .boxShadow(offsetX = 0.px, offsetY = 4.px, blurRadius = 3.px, spreadRadius = 1.px, color = rgba(0, 0, 0, 0.10))
             .position(Position.Fixed)
             .zIndex(1000)
             .top(0.px)
@@ -35,35 +35,57 @@ fun TopBar() {
                 attr("alt", "Logo")
                 classes("top-bar-logo")
                 style {
-                    height(50.px)
-                    width(75.px)
+                    height(60.px)
+                    backgroundColor(Color("#2a0505"))
                 }
             })
 
             listOf("Home", "RIVAL", "Team", "Mission", "Designs").forEach { item ->
                 A(href = "#", attrs = {
                     classes("top-bar-item")
+                    style {
+                        color(Color("#F5E5CC"))
+                        fontSize(16.px)
+                        fontWeight("400")
+                        lineHeight(24.px)
+                        padding(10.px, 20.px)
+                        borderRadius(10.px)
+                    }
                 }) {
                     Text(item)
                 }
             }
 
-            Div(attrs = {
-                classes("spacer")
-            })
-
-            Div(attrs = {
-                classes("spacer")
-            })
-
             A(href = "#", attrs = {
                 classes("top-bar-text")
+                style {
+                    color(Color("#D20041"))
+                    fontSize(16.px)
+                    fontWeight("500")
+                    lineHeight(20.px)
+                    padding(10.px, 20.px)
+                    borderRadius(6.px)
+                    textAlign("center")
+                    property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                }
             }) {
                 Text("Contact")
             }
 
             A(href = "#", attrs = {
                 classes("top-bar-button")
+                style {
+                    justifyContent(JustifyContent.Center)
+                    alignItems(AlignItems.Center)
+                    color(Color("#F5E5CC"))
+                    fontSize(16.px)
+                    fontWeight("500")
+                    lineHeight(24.px)
+                    padding(10.px, 20.px)
+                    borderRadius(6.px)
+                    backgroundColor(Color("#D20041"))
+                    property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                }
             }) {
                 Text("Contribute")
             }
