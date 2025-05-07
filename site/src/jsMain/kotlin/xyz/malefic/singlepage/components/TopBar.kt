@@ -99,7 +99,7 @@ fun TopBar() {
                 property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
             }
         }) {
-            Text("IN PROGRESS")
+            Text("WEBSITE IN PROGRESS")
         }
     }
 }
