@@ -2,8 +2,6 @@ package xyz.malefic.singlepage.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
-import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -39,7 +37,7 @@ fun HeroSection() {
                 }
             }
 
-            Img(src = "/assets/madTesting.png", attrs = {
+            Img(src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png", attrs = {
                 attr("alt", "Logo")
                 classes("hero-image")
             })

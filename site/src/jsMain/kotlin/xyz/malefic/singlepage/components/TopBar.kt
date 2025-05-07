@@ -35,7 +35,7 @@ fun TopBar() {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
         ) {
-            Img(src = "/assets/madTesting.png", attrs = {
+            Img(src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png", attrs = {
                 attr("alt", "Logo")
                 classes("top-bar-logo")
                 style {
