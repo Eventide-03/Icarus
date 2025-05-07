@@ -1,17 +1,20 @@
 package xyz.malefic.singlepage.pages
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.foundation.layout.Box
-import com.varabyte.kobweb.compose.ui.Alignment
+import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
-import org.jetbrains.compose.web.dom.Text
+import xyz.malefic.singlepage.components.HeroSection
+import xyz.malefic.singlepage.components.RIVALSection
+import xyz.malefic.singlepage.components.TopBar
 
 @Page
 @Composable
 fun HomePage() {
-    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("THIS PAGE INTENTIONALLY LEFT BLANK!")
+    Column(Modifier.fillMaxSize()) {
+        TopBar()
+        HeroSection()
+        RIVALSection()
     }
 }
