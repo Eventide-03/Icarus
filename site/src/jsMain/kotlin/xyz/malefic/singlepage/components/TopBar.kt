@@ -99,7 +99,7 @@ fun TopBar() {
                 property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
             }
         }) {
-            Text("Contribute")
+            Text("IN PROGRESS")
         }
     }
 }
