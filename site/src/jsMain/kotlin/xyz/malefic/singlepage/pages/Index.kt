@@ -5,9 +5,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.core.Page
-import xyz.malefic.singlepage.components.HeroSection
-import xyz.malefic.singlepage.components.RIVALSection
-import xyz.malefic.singlepage.components.TopBar
+import xyz.malefic.singlepage.components.*
 
 @Page
 @Composable
@@ -16,5 +14,8 @@ fun HomePage() {
         TopBar()
         HeroSection()
         RIVALSection()
+        TeamSection()
+        MissionSection()
+        DesignsSection()
     }
 }
