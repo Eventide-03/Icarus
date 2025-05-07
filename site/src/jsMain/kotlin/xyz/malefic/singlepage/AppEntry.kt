@@ -1,6 +1,7 @@
 package xyz.malefic.singlepage
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.core.App
 import com.varabyte.kobweb.silk.SilkApp
@@ -17,7 +18,7 @@ fun AppEntry(content: @Composable () -> Unit) {
         // Include the IcarusTonic styles
         IcarusTonicStyleSheet()
 
-        Surface(SmoothColorStyle.toModifier().minHeight(100.vh)) {
+        Surface(SmoothColorStyle.toModifier().minHeight(100.vh).fontFamily("Trebuchet MS", "sans-serif")) {
             content()
         }
     }
