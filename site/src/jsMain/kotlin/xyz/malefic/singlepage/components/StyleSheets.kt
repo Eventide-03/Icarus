@@ -1,9 +1,7 @@
 package xyz.malefic.singlepage.components
 
 import androidx.compose.runtime.Composable
-import org.jetbrains.compose.web.dom.ElementScope
 import org.jetbrains.compose.web.dom.Style
-import org.w3c.dom.HTMLStyleElement
 
 @Composable
 fun IcarusTonicStyleSheet() {
