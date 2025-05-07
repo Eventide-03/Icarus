@@ -1,9 +1,7 @@
-package xyz.malefic.singlepage.components
+package io.github.rishthewizard.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
-import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*

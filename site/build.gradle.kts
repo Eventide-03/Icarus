@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.kobweb.application)
 }
 
-group = "xyz.malefic.singlepage"
+group = "io.github.rishthewizard"
 version = "1.0-SNAPSHOT"
 
 kobweb {
@@ -18,7 +18,7 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("singlepage")
+    configAsKobwebApplication("maadbots")
 
     sourceSets {
         jsMain.dependencies {

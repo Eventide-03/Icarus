@@ -1,33 +1,31 @@
-package xyz.malefic.singlepage.components
+package io.github.rishthewizard.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
-import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun MissionSection() {
+fun DesignsSection() {
     Div(attrs = {
         style {
             width(100.percent)
             height(300.px)
-            backgroundColor(Color("#252f41"))
+            backgroundColor(Color("#132034"))
             display(DisplayStyle.Flex)
             justifyContent(JustifyContent.Center)
             alignItems(AlignItems.Center)
         }
     }) {
-        // Placeholder for Mission section content
+        // Placeholder for Designs section content
         H2(attrs = {
             style {
                 color(Color("#F5E5CC"))
                 fontSize(32.px)
             }
         }) {
-            Text("Mission Section - Coming Soon")
+            Text("Designs Section - Coming Soon")
         }
     }
 }

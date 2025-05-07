@@ -1,4 +1,4 @@
-package xyz.malefic.singlepage.components
+package io.github.rishthewizard.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
