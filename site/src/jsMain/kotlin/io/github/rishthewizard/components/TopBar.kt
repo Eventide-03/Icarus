@@ -63,6 +63,10 @@ fun TopBar() {
                             fontSize(16.px)
                             fontWeight("400")
                             lineHeight(24.px)
+                            textDecoration("none") // Ensure no underline
+                            textDecoration("none")
+                            property("transition", "text-decoration 0.2s ease-in-out")
+                            property("&:hover", "text-decoration: underline") // Add underline on hover
                         },
                 )
             }
