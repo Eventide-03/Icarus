@@ -44,7 +44,7 @@ fun TopBar() {
                 }
             })
 
-            listOf("Home", "RIVAL", "Team", "Mission", "Designs").forEach { item ->
+            listOf("Home", "RIVAL", "Proposal", "Mission", "Team", "Branding").forEach { item ->
                 Box(
                     modifier =
                         Modifier.styleModifier {
