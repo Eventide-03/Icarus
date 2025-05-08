@@ -52,7 +52,6 @@ fun TopBar() {
                             borderRadius(10.px)
                         },
                 ) {
-                    // TODO: MOVE TEXT HERE
                 }
                 Link(
                     "#",

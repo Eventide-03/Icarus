@@ -11,7 +11,7 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun HeroSection() {
+fun Home() {
     Box(
         modifier =
             Modifier
