@@ -1,3 +1,8 @@
+Thank you to OmyDaGreat for providing me with this amazing library for the building of this website through kobweb, and Muntasir Billah for creating a general template on Figma for our reference!
+Figma Template: https://www.figma.com/community/file/1222060007934600841
+
+
+Original README:
 This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
 
 This template is useful if you already know what you're doing and just want a clean slate. By default, it
