@@ -14,7 +14,7 @@ fun Mission() {
         modifier =
             Modifier
                 .fillMaxWidth()
-                .backgroundColor(Color("#132034"))
+                .backgroundColor(Color("#1A1423"))
                 .styleModifier {
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
@@ -40,7 +40,7 @@ fun Mission() {
                 H2(
                     attrs = {
                         style {
-                            color(Color("#FFFFFF"))
+                            color(Color("#D20041"))
                             fontSize(36.px)
                             fontWeight(600)
                             marginBottom(20.px)

@@ -74,7 +74,6 @@ fun Home() {
                                 fontStyle("normal")
                                 fontWeight(600)
                                 lineHeight(76.px)
-                                marginTop(16.px)
                             },
                 ) {
                     Text("M.A.A.D Bots")
@@ -104,16 +103,16 @@ fun Home() {
                                 display(DisplayStyle.InlineBlock)
                                 justifyContent(JustifyContent.Center)
                                 alignItems(AlignItems.Center)
-                                color(Color("#F5E5CC"))
+                                color(Color("#FFF"))
                                 fontSize(16.px)
                                 fontStyle("normal")
                                 fontWeight(500)
                                 lineHeight(24.px)
                                 textDecoration("none")
-                                padding(10.px, 20.px)
+                                padding(14.px, 32.px)
                                 borderRadius(6.px)
                                 backgroundColor(Color("#D20041"))
-                                marginTop(24.px)
+                                marginTop(32.px)
                             },
                 )
             }

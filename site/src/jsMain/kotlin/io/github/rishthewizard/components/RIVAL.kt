@@ -1,6 +1,7 @@
 package io.github.rishthewizard.components
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -14,7 +15,7 @@ fun RIVAL() {
         modifier =
             Modifier
                 .fillMaxWidth()
-                .backgroundColor(Color("#132034"))
+                .backgroundColor(Color("#1A1423"))
                 .styleModifier {
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
@@ -40,7 +41,7 @@ fun RIVAL() {
                 H2(
                     attrs = {
                         style {
-                            color(Color("#FFFFFF"))
+                            color(Color("#D20041"))
                             fontSize(36.px)
                             fontWeight(600)
                             marginBottom(20.px)
@@ -59,7 +60,21 @@ fun RIVAL() {
                     },
                 ) {
                     Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "RIVAL is a relatively new robotics competition similar to FRC and FTC. The competition focuses on the design and construction of a robot that can compete in the yearly challenge, this year the theme is \"DOOMSDAY\" . The competition allows robotics with minimal design contraints, allowing participation from beginners to advanced robotics enthusiasts. ",
+                    )
+                }
+                P(
+                    attrs = {
+                        style {
+                            color(Color("#F5E5CC"))
+                            fontSize(16.px)
+                            lineHeight(24.px)
+                            textDecoration(TextDecorationLine.Underline)`
+                        }
+                    },
+                ) {
+                    Text(
+                        "https://rivalrobotics.co/",
                     )
                 }
             }
