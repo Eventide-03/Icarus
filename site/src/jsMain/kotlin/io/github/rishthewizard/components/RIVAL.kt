@@ -69,7 +69,7 @@ fun RIVAL() {
                             color(Color("#F5E5CC"))
                             fontSize(16.px)
                             lineHeight(24.px)
-                            textDecoration(TextDecorationLine.Underline)`
+                            textDecoration(TextDecorationLine.Underline)
                         }
                     },
                 ) {
