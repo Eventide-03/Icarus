@@ -1,7 +1,6 @@
 package io.github.rishthewizard.components
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -56,40 +55,58 @@ fun RIVAL() {
                             color(Color("#F5E5CC"))
                             fontSize(16.px)
                             lineHeight(24.px)
+                            marginBottom(4.px)
                         }
                     },
                 ) {
                     Text(
-                        "RIVAL is a relatively new robotics competition similar to FRC and FTC. The competition focuses on the design and construction of a robot that can compete in the yearly challenge, this year the theme is \"DOOMSDAY\" . The competition allows robotics with minimal design contraints, allowing participation from beginners to advanced robotics enthusiasts. ",
+                        "RIVAL is a relatively new robotics competition similar to FRC and FTC. The competition focuses on the design and construction of a robot that can compete in a yearly challenge, this year, the theme is \"DOOMSDAY\". The competition allows the construction of robotics with minimal design contraints, allowing participation from beginners to advanced robotics enthusiasts.",
                     )
                 }
-                P(
+                Span(
                     attrs = {
                         style {
-                            color(Color("#F5E5CC"))
-                            fontSize(16.px)
-                            lineHeight(24.px)
-                            textDecoration(TextDecorationLine.Underline)
+                            display(DisplayStyle.Block)
+                            marginTop(0.px)
                         }
                     },
                 ) {
-                    Text(
-                        "https://rivalrobotics.co/",
-                    )
+                    A(
+                        attrs = {
+                            attr("href", "https://rivalrobotics.co/")
+                            style {
+                                color(Color("#F5E5CC"))
+                                fontSize(16.px)
+                                lineHeight(24.px)
+                                textDecoration("underline")
+                            }
+                        },
+                    ) {
+                        Text("https://rivalrobotics.co/")
+                    }
                 }
             }
 
-            Img(
-                src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png",
-                attrs = {
-                    attr("alt", "RIVAL Logo")
+            Div({
+                style {
+                    width(1750.px)
+                    height(270.px)
+                    borderRadius(8.px)
+                    overflow("hidden") // Ensure the video respects the border radius
+                }
+            }) {
+                Iframe({
+                    attr("src", "https://www.youtube.com/embed/5qHXHqN3Qpw")
+                    attr("title", "RIVAL Robotics DOOMSDAY YouTube video")
+                    attr("frameborder", "0")
+                    attr("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share")
+                    attr("allowfullscreen", "true")
                     style {
-                        maxWidth(400.px)
-                        property("height", "auto")
-                        borderRadius(8.px)
+                        width(100.percent)
+                        height(100.percent)
                     }
-                },
-            )
+                })
+            }
         }
     }
 }
