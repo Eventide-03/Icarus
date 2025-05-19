@@ -19,23 +19,33 @@ fun RIVAL() {
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
                     alignItems(AlignItems.Center)
-                    padding(40.px, 96.px)
+                    padding(0.px, 96.px, 40.px, 96.px) // Reduced top padding to move content up
+                    minHeight(400.px) // Add minimum height to ensure vertical space
                 },
     ) {
         Row(
             modifier =
                 Modifier
                     .fillMaxWidth()
+                    .fillMaxHeight() // Take full height of parent Box
                     .styleModifier {
                         display(DisplayStyle.Flex)
-                        alignItems(AlignItems.Center)
+                        alignItems(AlignItems.Center) // Center items vertically
                         justifyContent(JustifyContent.SpaceBetween)
                         gap(40.px)
                     },
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Column(
-                modifier = Modifier.weight(1f),
+                modifier =
+                    Modifier
+                        .weight(1f)
+                        .fillMaxHeight() // Take full height of parent Row
+                        .styleModifier {
+                            display(DisplayStyle.Flex)
+                            flexDirection(FlexDirection.Column)
+                            justifyContent(JustifyContent.Center) // Center content vertically
+                        },
             ) {
                 H2(
                     attrs = {
@@ -43,7 +53,7 @@ fun RIVAL() {
                             color(Color("#D20041"))
                             fontSize(36.px)
                             fontWeight(600)
-                            marginBottom(20.px)
+                            marginBottom(10.px)
                         }
                     },
                 ) {
@@ -93,6 +103,8 @@ fun RIVAL() {
                     height(270.px)
                     borderRadius(8.px)
                     overflow("hidden") // Ensure the video respects the border radius
+                    display(DisplayStyle.Flex)
+                    alignItems(AlignItems.Center) // Center iframe vertically
                 }
             }) {
                 Iframe({

@@ -14,7 +14,7 @@ fun Footer() {
         modifier =
             Modifier
                 .fillMaxWidth()
-                .backgroundColor(Color("#1C293E")) // Dark footer background
+                .backgroundColor(Color("#1C293E")) // Dark purple footer background matching team's branding
                 .styleModifier {
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
@@ -32,7 +32,7 @@ fun Footer() {
                         gap(40.px)
                     },
         ) {
-            // Left Section - Nexcent Info
+            // Left Section - M.A.A.D Bots Info
             Column {
                 Div(
                     attrs = {
@@ -44,7 +44,7 @@ fun Footer() {
                         }
                     },
                 ) {
-                    Text("Nexcent")
+                    Text("M.A.A.D Bots")
                 }
                 Div(
                     attrs = {
@@ -55,7 +55,7 @@ fun Footer() {
                         }
                     },
                 ) {
-                    Text("Copyright © 2020 Nexcent ltd.")
+                    Text("Nonprofit 501(c)(3) legal entity under Hack Club Bank")
                 }
                 Div(
                     attrs = {
@@ -65,7 +65,7 @@ fun Footer() {
                         }
                     },
                 ) {
-                    Text("All rights reserved")
+                    Text("High School Robotics Team")
                 }
                 Row(
                     modifier =
@@ -74,49 +74,116 @@ fun Footer() {
                             marginTop(20.px)
                         },
                 ) {
-                    // Social Media Icons - Replace with your actual Img/Link Composables
-                    Div(
+                    // HCB Logo
+                    A(
                         attrs = {
+                            attr("href", "#")
+                            attr("title", "HCB")
                             style {
-                                width(24.px)
-                                height(24.px)
-                                backgroundColor(Color.gray)
+                                display(DisplayStyle.Flex)
+                                justifyContent(JustifyContent.Center)
+                                alignItems(AlignItems.Center)
+                                width(32.px)
+                                height(32.px)
+                                backgroundColor(Color.transparent)
+                                borderRadius(10.px)
+                                padding(0.px)
                             }
                         },
-                    ) {}
-                    Div(
+                    ) {
+                        Img(
+                            src = "https://assets.hackclub.com/hcb-dark.svg",
+                            attrs = {
+                                attr("alt", "Hack Club Bank")
+                                style {
+                                    width(28.px)
+                                    height(28.px)
+                                    display(DisplayStyle.Block)
+                                }
+                            },
+                        )
+                    }
+
+                    // Instagram Logo
+                    A(
                         attrs = {
+                            attr("href", "#")
+                            attr("title", "Instagram")
                             style {
-                                width(24.px)
-                                height(24.px)
-                                backgroundColor(Color.gray)
+                                display(DisplayStyle.Flex)
+                                justifyContent(JustifyContent.Center)
+                                alignItems(AlignItems.Center)
+                                width(32.px)
+                                height(32.px)
+                                backgroundColor(Color("#132034"))
+                                borderRadius(10.px)
+                                color(Color("#FFFFFF"))
+                                fontSize(14.px)
+                                fontWeight(700)
+                                textDecoration("none")
                             }
                         },
-                    ) {}
-                    Div(
+                    ) {
+                        Img(
+                            src = "https://icons.hackclub.com/api/icons/red/instagram",
+                            attrs = {
+                                attr("alt", "Instagram")
+                                style {
+                                    width(28.px)
+                                    height(28.px)
+                                    display(DisplayStyle.Block)
+                                }
+                            },
+                        )
+                    }
+
+                    // Discord Logo (now GitHub)
+                    A(
                         attrs = {
+                            attr("href", "#")
+                            attr("title", "GitHub")
                             style {
-                                width(24.px)
-                                height(24.px)
-                                backgroundColor(Color.gray)
+                                display(DisplayStyle.Flex)
+                                justifyContent(JustifyContent.Center)
+                                alignItems(AlignItems.Center)
+                                width(32.px)
+                                height(32.px)
+                                backgroundColor(Color("#1A1423"))
+                                borderRadius(10.px)
+                                color(Color("#6e7681")) // GitHub grey
+                                fontSize(14.px)
+                                fontWeight(700)
+                                textDecoration("none")
                             }
                         },
-                    ) {}
+                    ) {
+                        Img(
+                            src = "https://icons.hackclub.com/api/icons/grey/github",
+                            attrs = {
+                                attr("alt", "GitHub")
+                                style {
+                                    width(28.px)
+                                    height(28.px)
+                                    display(DisplayStyle.Block)
+                                }
+                            },
+                        )
+                    }
                 }
             }
 
-            // Middle Sections - Company & Support
+            // Middle Sections - Team & Competition
             Row(
                 modifier =
                     Modifier.styleModifier {
                         gap(80.px)
                     },
             ) {
-                FooterColumn(title = "Company", items = listOf("About us", "Blog", "Contact us", "Pricing", "Testimonials"))
-                FooterColumn(title = "Support", items = listOf("Help center", "Terms of service", "Legal", "Privacy policy", "Status"))
+                FooterColumn(title = "Team", items = listOf("About us", "Members", "Mentors", "Join us", "Sponsors"))
+                FooterColumn(title = "Competition", items = listOf("RIVAL Robotics", "Events", "Resources", "Rules", "YouTube"))
             }
 
-            // Right Section - Stay up to date
+            // Right Section - Join our robotics newsletter
             Column {
                 Div(
                     attrs = {
@@ -124,11 +191,22 @@ fun Footer() {
                             color(Color("#FFFFFF"))
                             fontSize(16.px)
                             fontWeight(600)
-                            marginBottom(16.px)
+                            marginBottom(0.px)
                         }
                     },
                 ) {
-                    Text("Stay up to date")
+                    Text("Join our robotics newsletter")
+                }
+                P(
+                    attrs = {
+                        style {
+                            color(Color("#8C97A7"))
+                            fontSize(14.px)
+                            marginBottom(12.px)
+                        }
+                    },
+                ) {
+                    Text("Get updates on team events, competitions, and our progress.")
                 }
                 Row(
                     modifier =
@@ -176,8 +254,8 @@ fun Footer() {
                             onClick { /* TODO: Handle subscribe */ }
                         },
                     ) {
-                        // Send icon (replace with your actual icon)
-                        Text("→")
+                        // Send icon
+                        Text("Subscribe")
                     }
                 }
             }

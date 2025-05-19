@@ -59,7 +59,7 @@ fun Mission() {
                     },
                 ) {
                     Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "Our mission is to inspire and empower the next generation of innovators through robotics. We strive to create cutting-edge robotic solutions that push the boundaries of what's possible while fostering a collaborative environment where creativity, technical excellence, and strategic thinking flourish. Through dedication, teamwork, and continuous learning, we aim to develop not just competitive robots, but also the skills and character that will prepare team members for future challenges in STEM fields and beyond."
                     )
                 }
             }

@@ -72,7 +72,7 @@ fun Branding() {
                     },
                 ) {
                     Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "Our team's identity is inspired by the Greek myth of Icarus, symbolizing our ambition to soar to new heights while maintaining the wisdom to know our limits. Our primary colors are crimson (#D20041) and navy blue (#132034), representing passion and depth of knowledge respectively. The dark purple accent (#1A1423) adds sophistication to our brand. These colors were chosen not only for their visual impact but also for their psychological associations: red for energy and determination, blue for trust and intelligence, and purple for creativity and wisdom. Our logo features stylized wings that form an abstract 'I' shape, embodying our commitment to innovation while honoring our namesake. This branding extends across our robot, team uniforms, pit display, and all communications to create a cohesive and memorable identity in competition."
                     )
                 }
                 A(

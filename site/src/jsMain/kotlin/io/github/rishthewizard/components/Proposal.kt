@@ -86,7 +86,7 @@ fun Proposal() {
                     },
                 ) {
                     Text(
-                        "[Insert how our robot's features/how it will fulfill the game tasks] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "Our robot design features a modular chassis with a low center of gravity for enhanced stability during high-speed maneuvers. The primary collection mechanism utilizes a dual-intake system with compliant wheels to efficiently gather and secure game elements. For scoring, we've implemented a telescoping arm with a 270-degree range of motion, capable of precise placement at various heights. The drivetrain employs mecanum wheels for omnidirectional movement, allowing for strategic positioning without complex turning sequences. All systems are powered by high-efficiency brushless motors and controlled by our custom software that includes autonomous pathfinding algorithms and driver-assist features. This design maximizes our scoring potential while maintaining the adaptability needed to respond to changing match conditions and alliance strategies."
                     )
                 }
             }
