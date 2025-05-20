@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.kobweb.application)
 }
 
-group = "io.github.rishthewizard"
+group = "io.github.eventide03"
 version = "1.0-SNAPSHOT"
 
 kobweb {

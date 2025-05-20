@@ -1,4 +1,4 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
@@ -35,7 +35,7 @@ fun Proposal() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png",
+                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Robot CAD Design")
                     style {
@@ -86,7 +86,7 @@ fun Proposal() {
                     },
                 ) {
                     Text(
-                        "Our robot design features a modular chassis with a low center of gravity for enhanced stability during high-speed maneuvers. The primary collection mechanism utilizes a dual-intake system with compliant wheels to efficiently gather and secure game elements. For scoring, we've implemented a telescoping arm with a 270-degree range of motion, capable of precise placement at various heights. The drivetrain employs mecanum wheels for omnidirectional movement, allowing for strategic positioning without complex turning sequences. All systems are powered by high-efficiency brushless motors and controlled by our custom software that includes autonomous pathfinding algorithms and driver-assist features. This design maximizes our scoring potential while maintaining the adaptability needed to respond to changing match conditions and alliance strategies."
+                        "Our robot design features a modular chassis with a low center of gravity for enhanced stability during high-speed maneuvers. The primary collection mechanism utilizes a dual-intake system with compliant wheels to efficiently gather and secure game elements. For scoring, we've implemented a telescoping arm with a 270-degree range of motion, capable of precise placement at various heights. The drivetrain employs mecanum wheels for omnidirectional movement, allowing for strategic positioning without complex turning sequences. All systems are powered by high-efficiency brushless motors and controlled by our custom software that includes autonomous pathfinding algorithms and driver-assist features. This design maximizes our scoring potential while maintaining the adaptability needed to respond to changing match conditions and alliance strategies.",
                     )
                 }
             }

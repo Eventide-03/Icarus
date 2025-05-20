@@ -1,4 +1,4 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*

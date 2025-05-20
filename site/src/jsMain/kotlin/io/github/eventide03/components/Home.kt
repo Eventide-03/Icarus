@@ -1,4 +1,4 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
@@ -118,7 +118,7 @@ fun Home() {
             }
 
             Img(
-                src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png",
+                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Logo")
                     style {

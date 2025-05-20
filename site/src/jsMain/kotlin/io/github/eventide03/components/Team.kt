@@ -1,9 +1,8 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.*
-import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
@@ -37,7 +36,7 @@ fun Team() {
         ) {
             // Meet the m.a.a.d Lads Section
             Column(
-                modifier = 
+                modifier =
                     Modifier
                         .fillMaxWidth()
                         .styleModifier {
@@ -75,7 +74,7 @@ fun Team() {
                                 backgroundColor(Color("#D20041"))
                                 borderRadius(50.percent)
                             }
-                        }
+                        },
                     ) {}
                     // Placeholder for Mentors Icon
                     Div(
@@ -86,7 +85,7 @@ fun Team() {
                                 backgroundColor(Color("#D20041"))
                                 borderRadius(50.percent)
                             }
-                        }
+                        },
                     ) {}
                     TeamStat("000", "Mentors")
                 }
@@ -115,7 +114,7 @@ fun Team() {
 
             // Meet the rest of the team Grid Section
             Column(
-                modifier = 
+                modifier =
                     Modifier
                         .fillMaxWidth()
                         .styleModifier {
@@ -141,7 +140,7 @@ fun Team() {
                                 fontSize(20.px)
                                 fontWeight(500)
                             }
-                        }
+                        },
                     ) {
                         Text("Meet the rest of the team")
                     }
@@ -152,7 +151,7 @@ fun Team() {
                                 color(Color("#FFFFFF"))
                                 fontSize(20.px)
                             }
-                        }
+                        },
                     ) { Text("→") }
                 }
 
@@ -166,9 +165,9 @@ fun Team() {
                                 gap(24.px)
                             },
                 ) {
-                    TeamMemberCard("https://rishthewizard.github.io/Icarus/assets/madTesting.png", "")
-                    TeamMemberCard("https://rishthewizard.github.io/Icarus/assets/madTesting.png", "")
-                    TeamMemberCard("https://rishthewizard.github.io/Icarus/assets/madTesting.png", "")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
                 }
             }
         }
@@ -181,11 +180,12 @@ fun TeamStat(
     label: String,
 ) {
     Column(
-        modifier = Modifier.styleModifier {
-            display(DisplayStyle.Flex)
-            flexDirection(FlexDirection.Column)
-            alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
-        }
+        modifier =
+            Modifier.styleModifier {
+                display(DisplayStyle.Flex)
+                flexDirection(FlexDirection.Column)
+                alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+            },
     ) {
         Div(
             attrs = {
@@ -194,7 +194,7 @@ fun TeamStat(
                     fontSize(24.px)
                     fontWeight(600)
                 }
-            }
+            },
         ) {
             Text(value)
         }
@@ -204,7 +204,7 @@ fun TeamStat(
                     color(Color("#FFFFFF"))
                     fontSize(16.px)
                 }
-            }
+            },
         ) {
             Text(label)
         }
@@ -226,7 +226,7 @@ fun TeamMemberCard(
                 borderRadius(8.px)
                 objectFit(ObjectFit.Cover)
             }
-        }
+        },
     )
     // You can add the team member's name below the image if needed
 }

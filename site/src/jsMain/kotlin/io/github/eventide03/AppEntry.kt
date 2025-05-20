@@ -1,4 +1,4 @@
-package io.github.rishthewizard
+package io.github.eventide03
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
@@ -8,7 +8,7 @@ import com.varabyte.kobweb.silk.SilkApp
 import com.varabyte.kobweb.silk.components.layout.Surface
 import com.varabyte.kobweb.silk.style.common.SmoothColorStyle
 import com.varabyte.kobweb.silk.style.toModifier
-import io.github.rishthewizard.components.IcarusTonicStyleSheet
+import io.github.eventide03.components.IcarusTonicStyleSheet
 import org.jetbrains.compose.web.css.vh
 
 @App

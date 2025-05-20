@@ -1,4 +1,4 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
@@ -35,7 +35,7 @@ fun Branding() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png",
+                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Team Image")
                     style {
@@ -72,7 +72,7 @@ fun Branding() {
                     },
                 ) {
                     Text(
-                        "Our team's identity is inspired by the Greek myth of Icarus, symbolizing our ambition to soar to new heights while maintaining the wisdom to know our limits. Our primary colors are crimson (#D20041) and navy blue (#132034), representing passion and depth of knowledge respectively. The dark purple accent (#1A1423) adds sophistication to our brand. These colors were chosen not only for their visual impact but also for their psychological associations: red for energy and determination, blue for trust and intelligence, and purple for creativity and wisdom. Our logo features stylized wings that form an abstract 'I' shape, embodying our commitment to innovation while honoring our namesake. This branding extends across our robot, team uniforms, pit display, and all communications to create a cohesive and memorable identity in competition."
+                        "Our team's identity is inspired by the Greek myth of Icarus, symbolizing our ambition to soar to new heights while maintaining the wisdom to know our limits. Our primary colors are crimson (#D20041) and navy blue (#132034), representing passion and depth of knowledge respectively. The dark purple accent (#1A1423) adds sophistication to our brand. These colors were chosen not only for their visual impact but also for their psychological associations: red for energy and determination, blue for trust and intelligence, and purple for creativity and wisdom. Our logo features stylized wings that form an abstract 'I' shape, embodying our commitment to innovation while honoring our namesake. This branding extends across our robot, team uniforms, pit display, and all communications to create a cohesive and memorable identity in competition.",
                     )
                 }
                 A(

@@ -1,4 +1,4 @@
-package io.github.rishthewizard.components
+package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.*
@@ -59,13 +59,13 @@ fun Mission() {
                     },
                 ) {
                     Text(
-                        "Our mission is to inspire and empower the next generation of innovators through robotics. We strive to create cutting-edge robotic solutions that push the boundaries of what's possible while fostering a collaborative environment where creativity, technical excellence, and strategic thinking flourish. Through dedication, teamwork, and continuous learning, we aim to develop not just competitive robots, but also the skills and character that will prepare team members for future challenges in STEM fields and beyond."
+                        "Our mission is to inspire and empower the next generation of innovators through robotics. We strive to create cutting-edge robotic solutions that push the boundaries of what's possible while fostering a collaborative environment where creativity, technical excellence, and strategic thinking flourish. Through dedication, teamwork, and continuous learning, we aim to develop not just competitive robots, but also the skills and character that will prepare team members for future challenges in STEM fields and beyond.",
                     )
                 }
             }
 
             Img(
-                src = "https://rishthewizard.github.io/Icarus/assets/madTesting.png",
+                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Mission Image")
                     style {
