@@ -132,9 +132,9 @@ fun Team() {
                                 gap(24.px)
                             },
                 ) {
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/RishiDown.png", "Rishi Mishra")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sourish.png", "Sourish Mehta")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
                 }
                 Link(
                     path = "#",
@@ -208,17 +208,40 @@ fun TeamMemberCard(
     imageUrl: String,
     name: String,
 ) {
-    Img(
-        src = imageUrl,
-        attrs = {
-            attr("alt", "Team Member")
-            style {
-                width(300.px)
-                height(200.px)
-                borderRadius(8.px)
-                objectFit(ObjectFit.Cover)
+    Column(
+        modifier =
+            Modifier.styleModifier {
+                display(DisplayStyle.Flex)
+                flexDirection(FlexDirection.Column)
+                alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+                gap(8.px)
+            },
+    ) {
+        Img(
+            src = imageUrl,
+            attrs = {
+                attr("alt", "Team Member")
+                style {
+                    width(300.px)
+                    height(200.px)
+                    borderRadius(8.px)
+                    objectFit(ObjectFit.Cover)
+                }
+            },
+        )
+        if (name.isNotEmpty()) {
+            Div(
+                attrs = {
+                    style {
+                        color(Color("#D20041"))
+                        fontSize(18.px)
+                        fontWeight(500)
+                        textAlign("center")
+                    }
+                },
+            ) {
+                Text(name)
             }
-        },
-    )
-    // You can add the team member's name below the image if needed
+        }
+    }
 }

@@ -125,7 +125,7 @@ fun TopBar() {
                             },
                     )
                     Link(
-                        path = "#",
+                        path = "https://hcb.hackclub.com/donations/start/m-a-a-d-bots-rival-team",
                         text = "Contribute",
                         modifier =
                             Modifier.styleModifier {

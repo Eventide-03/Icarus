@@ -56,7 +56,7 @@ fun Footer() {
                         }
                     },
                 ) {
-                    Text("Nonprofit 501(c)(3) legal entity under Hack Club Bank")
+                    Text("Fiscally sponsored by Hack Club, a 501(c)(3) nonprofit")
                 }
                 Div(
                     attrs = {
@@ -78,7 +78,7 @@ fun Footer() {
                     // HCB Logo
                     A(
                         attrs = {
-                            attr("href", "#")
+                            attr("href", "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/donations")
                             attr("title", "HCB")
                             style {
                                 display(DisplayStyle.Flex)
@@ -139,7 +139,8 @@ fun Footer() {
                     }
                     A(
                         attrs = {
-                            attr("href", "#")
+                            attr("href", "https://github.com/Eventide-03/Icarus")
+                            // TODO: link this to the actual GitHub repo
                             attr("title", "GitHub")
                             style {
                                 display(DisplayStyle.Flex)

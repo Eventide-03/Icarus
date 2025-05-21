@@ -95,7 +95,7 @@ fun Home() {
                 }
 
                 Link(
-                    path = "#",
+                    path = "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/donations",
                     text = "Donate",
                     modifier =
                         Modifier
@@ -104,7 +104,7 @@ fun Home() {
                                 justifyContent(JustifyContent.Center)
                                 alignItems(AlignItems.Center)
                                 color(Color("#FFF"))
-                                fontSize(16.px)
+                                fontSize(18.px)
                                 fontStyle("normal")
                                 fontWeight(500)
                                 lineHeight(24.px)
