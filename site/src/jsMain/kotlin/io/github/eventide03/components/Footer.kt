@@ -5,6 +5,7 @@ import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.silk.components.navigation.Link
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
@@ -136,8 +137,6 @@ fun Footer() {
                             },
                         )
                     }
-
-                    // Discord Logo (now GitHub)
                     A(
                         attrs = {
                             attr("href", "#")
@@ -146,8 +145,8 @@ fun Footer() {
                                 display(DisplayStyle.Flex)
                                 justifyContent(JustifyContent.Center)
                                 alignItems(AlignItems.Center)
-                                width(32.px)
-                                height(32.px)
+                                width(30.px)
+                                height(30.px)
                                 backgroundColor(Color("#1A1423"))
                                 borderRadius(10.px)
                                 color(Color("#6e7681")) // GitHub grey
@@ -162,8 +161,8 @@ fun Footer() {
                             attrs = {
                                 attr("alt", "GitHub")
                                 style {
-                                    width(28.px)
-                                    height(28.px)
+                                    width(30.px)
+                                    height(30.px)
                                     display(DisplayStyle.Block)
                                 }
                             },
@@ -237,26 +236,22 @@ fun Footer() {
                             },
                         )
                     }
-                    A(
-                        attrs = {
-                            attr("href", "#")
-                            style {
-                                display(DisplayStyle.InlineBlock)
-                                backgroundColor(Color("#D20041"))
-                                color(Color("#FFFFFF"))
-                                padding(10.px, 16.px)
-                                borderRadius(8.px)
-                                fontSize(14.px)
-                                border(0.px)
-                                cursor("pointer")
-                                textDecoration("none")
-                            }
-                            onClick { /* TODO: Handle subscribe */ }
-                        },
-                    ) {
-                        // Send icon
-                        Text("Subscribe")
-                    }
+                    Link(
+                        path = "#",
+                        text = "Subscribe",
+                        modifier =
+                            Modifier
+                                .styleModifier {
+                                    display(DisplayStyle.InlineBlock)
+                                    backgroundColor(Color("#D20041"))
+                                    color(Color("#FFFFFF"))
+                                    padding(10.px, 16.px)
+                                    borderRadius(8.px)
+                                    fontSize(14.px)
+                                    border(0.px)
+                                    cursor("pointer")
+                                }.classNames("top-bar-action"),
+                    )
                 }
             }
         }

@@ -6,6 +6,7 @@ import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.silk.components.navigation.Link
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
@@ -90,26 +91,23 @@ fun Team() {
                     TeamStat("000", "Mentors")
                 }
 
-                A(
-                    attrs = {
-                        attr("href", "#")
-                        style {
-                            display(DisplayStyle.InlineBlock)
-                            backgroundColor(Color("#D20041"))
-                            color(Color("#FFFFFF"))
-                            padding(12.px, 24.px)
-                            borderRadius(8.px)
-                            fontSize(16.px)
-                            fontWeight(500)
-                            border(0.px)
-                            cursor("pointer")
-                            textDecoration("none")
-                        }
-                        onClick { /* TODO: Handle button click */ }
-                    },
-                ) {
-                    Text("See More")
-                }
+                Link(
+                    path = "#",
+                    text = "See More",
+                    modifier =
+                        Modifier
+                            .styleModifier {
+                                display(DisplayStyle.InlineBlock)
+                                backgroundColor(Color("#D20041"))
+                                color(Color("#FFFFFF"))
+                                padding(12.px, 24.px)
+                                borderRadius(8.px)
+                                fontSize(16.px)
+                                fontWeight(500)
+                                textAlign("center")
+                                cursor("pointer")
+                            }.classNames("top-bar-action"),
+                )
             }
 
             // Meet the rest of the team Grid Section
@@ -126,37 +124,6 @@ fun Team() {
             ) {
                 Row(
                     modifier =
-                        Modifier.styleModifier {
-                            cursor("pointer")
-                            display(DisplayStyle.Flex)
-                            alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
-                            gap(8.px)
-                        },
-                ) {
-                    Div(
-                        attrs = {
-                            style {
-                                color(Color("#FFFFFF"))
-                                fontSize(20.px)
-                                fontWeight(500)
-                            }
-                        },
-                    ) {
-                        Text("Meet the rest of the team")
-                    }
-                    // Right arrow
-                    Div(
-                        attrs = {
-                            style {
-                                color(Color("#FFFFFF"))
-                                fontSize(20.px)
-                            }
-                        },
-                    ) { Text("→") }
-                }
-
-                Row(
-                    modifier =
                         Modifier
                             .fillMaxWidth()
                             .styleModifier {
@@ -168,6 +135,31 @@ fun Team() {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "")
+                }
+                Link(
+                    path = "#",
+                    modifier =
+                        Modifier
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+                                gap(8.px)
+                                color(Color("#FFFFFF"))
+                                fontSize(20.px)
+                                fontWeight(500)
+                                cursor("pointer")
+                            }.classNames("top-bar-action"),
+                ) {
+                    Text("Meet the rest of the team")
+                    Div(
+                        attrs = {
+                            style {
+                                color(Color("#FFFFFF"))
+                                fontSize(20.px)
+                                marginLeft(4.px)
+                            }
+                        },
+                    ) { Text("→") }
                 }
             }
         }

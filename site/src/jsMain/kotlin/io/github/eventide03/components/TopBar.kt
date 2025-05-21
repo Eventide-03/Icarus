@@ -32,25 +32,24 @@ fun TopBar() {
                     .fillMaxHeight()
                     .padding(leftRight = 20.px)
                     .styleModifier {
-                        // Added styleModifier here for consistency
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.SpaceBetween)
+                        justifyContent(JustifyContent.Start)
+                        gap(120.px)
                     },
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween, // Consider removing this as styleModifer handles this
+            horizontalArrangement = Arrangement.Start,
         ) {
             // Logo and Text
             Row(
                 modifier =
                     Modifier.styleModifier {
-                        // Added styleModifier to the Row
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.Start) // Aligned items to the start
+                        justifyContent(JustifyContent.Start)
                     },
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(12.px), // Removed spacedBy as styleModifer handles this
+                horizontalArrangement = Arrangement.spacedBy(12.px),
             ) {
                 Img(
                     src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
@@ -59,7 +58,7 @@ fun TopBar() {
                         classes("top-bar-logo")
                         style {
                             height(40.px)
-                            marginLeft(90.px)
+                            marginLeft(85.px)
                         }
                     },
                 )
@@ -70,6 +69,7 @@ fun TopBar() {
                             fontSize(24.px)
                             fontWeight(700)
                             lineHeight(24.px)
+                            whiteSpace("nowrap") // Prevents wrapping to a new line
                         }
                     },
                 ) {
@@ -82,15 +82,12 @@ fun TopBar() {
             Row(
                 modifier =
                     Modifier.styleModifier {
-                        marginLeft(90.px)
-                        marginRight(100.px)
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
                         justifyContent(JustifyContent.Start)
-                        gap(50.px)
                     },
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(40.px), // Removed spacedBy as styleModifer handles this
+                horizontalArrangement = Arrangement.spacedBy(50.px), // This controls gap between nav items
             ) {
                 val navItems = listOf("Home", "RIVAL", "Proposal", "Mission", "Team", "Branding")
                 navItems.forEach { item ->
@@ -106,45 +103,43 @@ fun TopBar() {
                             },
                     )
                 }
-            }
-            // "Contact" Button
-            A(href = "#", attrs = {
-                classes("top-bar-text", "top-bar-action")
-                style {
-                    color(Color("#D20041"))
-                    marginRight(15.px)
-                    fontSize(16.px)
-                    fontWeight(500)
-                    lineHeight(20.px)
-                    padding(10.px, 20.px)
-                    borderRadius(6.px)
-                    textAlign("center")
-                    property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
-                    backgroundColor(Color("#132034"))
+                Row(
+                    modifier = Modifier.styleModifier { gap(20.px) },
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Link(
+                        path = "#",
+                        text = "Contact",
+                        modifier =
+                            Modifier.styleModifier {
+                                color(Color("#D20041"))
+                                marginLeft(65.px)
+                                fontSize(16.px)
+                                fontWeight(500)
+                                lineHeight(20.px)
+                                padding(10.px, 20.px)
+                                borderRadius(6.px)
+                                textAlign("center")
+                                property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                                backgroundColor(Color("#132034"))
+                            },
+                    )
+                    Link(
+                        path = "#",
+                        text = "Contribute",
+                        modifier =
+                            Modifier.styleModifier {
+                                color(Color("#F5E5CC"))
+                                fontSize(16.px)
+                                fontWeight(500)
+                                lineHeight(24.px)
+                                padding(10.px, 20.px)
+                                borderRadius(6.px)
+                                backgroundColor(Color("#D20041"))
+                                property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                            },
+                    )
                 }
-            }) {
-                Text("Contact")
-            }
-
-            // "Contribute" Button
-            A(href = "#", attrs = {
-                classes("top-bar-button", "top-bar-action")
-                style {
-                    marginRight(90.px)
-                    display(DisplayStyle.Flex)
-                    justifyContent(JustifyContent.Center)
-                    alignItems(AlignItems.Center)
-                    color(Color("#F5E5CC"))
-                    fontSize(16.px)
-                    fontWeight(500)
-                    lineHeight(24.px)
-                    padding(10.px, 20.px)
-                    borderRadius(6.px)
-                    backgroundColor(Color("#D20041"))
-                    property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
-                }
-            }) {
-                Text("Contribute")
             }
         }
     }

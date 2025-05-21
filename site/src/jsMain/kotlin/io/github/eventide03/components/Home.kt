@@ -108,12 +108,11 @@ fun Home() {
                                 fontStyle("normal")
                                 fontWeight(500)
                                 lineHeight(24.px)
-                                textDecoration("none")
                                 padding(14.px, 32.px)
                                 borderRadius(6.px)
                                 backgroundColor(Color("#D20041"))
                                 marginTop(32.px)
-                            },
+                            }.classNames("top-bar-action"),
                 )
             }
 
