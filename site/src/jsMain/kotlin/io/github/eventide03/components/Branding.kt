@@ -1,6 +1,7 @@
 package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.scrollMarginTop
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
@@ -16,11 +17,13 @@ fun Branding() {
             Modifier
                 .fillMaxWidth()
                 .backgroundColor(Color("#1A1423"))
+                .id("branding")
                 .styleModifier {
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
                     alignItems(AlignItems.Center)
                     padding(40.px, 96.px)
+                    scrollMarginTop(84.px)
                 },
     ) {
         Row(
@@ -56,7 +59,7 @@ fun Branding() {
                             color(Color("#D20041"))
                             fontSize(36.px)
                             fontWeight(600)
-                            marginBottom(20.px)
+                            marginBottom(15.px)
                         }
                     },
                 ) {
@@ -69,6 +72,7 @@ fun Branding() {
                             fontSize(16.px)
                             lineHeight(24.px)
                             marginBottom(20.px)
+                            marginTop(0.px)
                         }
                     },
                 ) {
@@ -78,7 +82,7 @@ fun Branding() {
                 }
                 Link(
                     path = "#",
-                    text = "Learn More",
+                    text = "Styling Guide",
                     modifier =
                         Modifier
                             .styleModifier {

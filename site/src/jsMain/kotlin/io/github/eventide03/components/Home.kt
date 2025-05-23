@@ -1,6 +1,7 @@
 package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.scrollMarginTop
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -15,6 +16,7 @@ fun Home() {
     Box(
         modifier =
             Modifier
+                .id("home")
                 .fillMaxWidth()
                 .minHeight(700.px)
                 .backgroundColor(Color("#132034"))
@@ -26,6 +28,7 @@ fun Home() {
                     boxSizing("border-box")
                     flexShrink(0)
                     paddingTop(84.px)
+                    scrollMarginTop(84.px)
                 },
     ) {
         Row(

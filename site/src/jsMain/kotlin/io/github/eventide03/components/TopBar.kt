@@ -89,10 +89,19 @@ fun TopBar() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(50.px), // This controls gap between nav items
             ) {
-                val navItems = listOf("Home", "RIVAL", "Proposal", "Mission", "Team", "Branding")
-                navItems.forEach { item ->
+                val navItems =
+                    mapOf(
+                        "Home" to "#home",
+                        "RIVAL" to "#rival",
+                        "Proposal" to "#proposal",
+                        "Mission" to "#mission",
+                        "Team" to "#team",
+                        "Branding" to "#branding",
+                    )
+
+                navItems.forEach { (item, anchor) ->
                     Link(
-                        path = "#",
+                        path = anchor,
                         text = item,
                         modifier =
                             Modifier.styleModifier {
@@ -108,6 +117,7 @@ fun TopBar() {
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Link(
+                        // TODO: scroll animations and js stuff
                         path = "#",
                         text = "Contact",
                         modifier =

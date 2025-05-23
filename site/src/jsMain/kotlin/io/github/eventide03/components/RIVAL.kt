@@ -10,9 +10,10 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun RIVAL() {
-    Box(
+    Row(
         modifier =
             Modifier
+                .id("rival")
                 .fillMaxWidth()
                 .backgroundColor(Color("#1A1423"))
                 .styleModifier {
@@ -20,7 +21,8 @@ fun RIVAL() {
                     justifyContent(JustifyContent.Center)
                     alignItems(AlignItems.Center)
                     padding(0.px, 96.px, 40.px, 96.px) // Reduced top padding to move content up
-                    minHeight(400.px) // Add minimum height to ensure vertical space
+                    minHeight(400.px)
+                    property("scroll-margin-top", "84px")
                 },
     ) {
         Row(
@@ -53,7 +55,7 @@ fun RIVAL() {
                             color(Color("#D20041"))
                             fontSize(36.px)
                             fontWeight(600)
-                            marginBottom(10.px)
+                            marginBottom(15.px)
                         }
                     },
                 ) {
@@ -65,6 +67,7 @@ fun RIVAL() {
                             color(Color("#F5E5CC"))
                             fontSize(16.px)
                             lineHeight(24.px)
+                            marginTop(0.px)
                             marginBottom(4.px)
                         }
                     },

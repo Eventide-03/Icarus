@@ -11,6 +11,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "maadbots"
+rootProject.name = "MaadBots"
 
 include(":site")

@@ -17,11 +17,13 @@ fun Team() {
             Modifier
                 .fillMaxWidth()
                 .backgroundColor(Color("#132034"))
+                .id("team")
                 .styleModifier {
                     display(DisplayStyle.Flex)
                     justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
                     alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
                     padding(80.px, 96.px)
+                    scrollMarginTop(84.px)
                 },
     ) {
         Column(
@@ -44,7 +46,7 @@ fun Team() {
                             display(DisplayStyle.Flex)
                             flexDirection(FlexDirection.Column)
                             alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
-                            gap(24.px)
+                            gap(1.px) // Set gap between children to 1px
                         },
             ) {
                 H2(
@@ -53,64 +55,91 @@ fun Team() {
                             color(Color("#FFFFFF"))
                             fontSize(36.px)
                             fontWeight(600)
+                            margin(0.px) // Remove default margin
                         }
                     },
                 ) {
-                    Text("Meet the m.a.a.d Lads")
+                    Text("Meet The Team")
                 }
-
+                // Added subtitle below the heading
+                Div(
+                    attrs = {
+                        style {
+                            color(Color("#F5E5CC"))
+                            fontSize(18.px)
+                            textAlign("center")
+                            marginTop(15.px) // Remove default margin
+                        }
+                    },
+                ) {
+                    Text("Divided into three unique subteams based on expertise and experience")
+                }
                 Row(
                     modifier =
-                        Modifier.styleModifier {
-                            gap(60.px)
-                        },
-                ) {
-                    TeamStat("000", "Members")
-                    // Placeholder for Members Icon
-                    Div(
-                        attrs = {
-                            style {
-                                width(32.px)
-                                height(32.px)
-                                backgroundColor(Color("#D20041"))
-                                borderRadius(50.percent)
-                            }
-                        },
-                    ) {}
-                    // Placeholder for Mentors Icon
-                    Div(
-                        attrs = {
-                            style {
-                                width(32.px)
-                                height(32.px)
-                                backgroundColor(Color("#D20041"))
-                                borderRadius(50.percent)
-                            }
-                        },
-                    ) {}
-                    TeamStat("000", "Mentors")
-                }
-
-                Link(
-                    path = "#",
-                    text = "See More",
-                    modifier =
                         Modifier
+                            .fillMaxWidth()
                             .styleModifier {
-                                display(DisplayStyle.InlineBlock)
-                                backgroundColor(Color("#D20041"))
-                                color(Color("#FFFFFF"))
-                                padding(12.px, 24.px)
-                                borderRadius(8.px)
-                                fontSize(16.px)
-                                fontWeight(500)
-                                textAlign("center")
-                                cursor("pointer")
-                            }.classNames("top-bar-action"),
-                )
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(50.px)
+                                marginTop(20.px)
+                            },
+                ) {
+                    Link(
+                        // TODO: add function to these buttons
+                        path = "#",
+                        text = "Mechanical",
+                        modifier =
+                            Modifier
+                                .styleModifier {
+                                    display(DisplayStyle.InlineBlock)
+                                    backgroundColor(Color("#D20041"))
+                                    color(Color("#FFFFFF"))
+                                    padding(12.px, 24.px)
+                                    borderRadius(8.px)
+                                    fontSize(16.px)
+                                    fontWeight(500)
+                                    textAlign("center")
+                                    cursor("pointer")
+                                }.classNames("top-bar-action"),
+                    )
+                    Link(
+                        path = "#",
+                        text = "Systems",
+                        modifier =
+                            Modifier
+                                .styleModifier {
+                                    display(DisplayStyle.InlineBlock)
+                                    backgroundColor(Color("#D20041"))
+                                    color(Color("#FFFFFF"))
+                                    padding(12.px, 24.px)
+                                    borderRadius(8.px)
+                                    fontSize(16.px)
+                                    fontWeight(500)
+                                    textAlign("center")
+                                    cursor("pointer")
+                                }.classNames("top-bar-action"),
+                    )
+                    Link(
+                        path = "#",
+                        text = "Software",
+                        modifier =
+                            Modifier
+                                .styleModifier {
+                                    display(DisplayStyle.InlineBlock)
+                                    backgroundColor(Color("#D20041"))
+                                    color(Color("#FFFFFF"))
+                                    padding(12.px, 24.px)
+                                    borderRadius(8.px)
+                                    fontSize(16.px)
+                                    fontWeight(500)
+                                    textAlign("center")
+                                    cursor("pointer")
+                                }.classNames("top-bar-action"),
+                    )
+                }
             }
 
-            // Meet the rest of the team Grid Section
             Column(
                 modifier =
                     Modifier
@@ -136,6 +165,35 @@ fun Team() {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sourish.png", "Sourish Mehta")
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
                 }
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(24.px)
+                                marginTop(24.px)
+                            },
+                ) {
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                }
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(24.px)
+                                marginTop(24.px)
+                            },
+                ) {
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                }
                 Link(
                     path = "#",
                     modifier =
@@ -150,16 +208,7 @@ fun Team() {
                                 cursor("pointer")
                             }.classNames("top-bar-action"),
                 ) {
-                    Text("Meet the rest of the team")
-                    Div(
-                        attrs = {
-                            style {
-                                color(Color("#FFFFFF"))
-                                fontSize(20.px)
-                                marginLeft(4.px)
-                            }
-                        },
-                    ) { Text("→") }
+                    Text("Meet the rest of the team →")
                 }
             }
         }
@@ -223,7 +272,7 @@ fun TeamMemberCard(
                 attr("alt", "Team Member")
                 style {
                     width(300.px)
-                    height(200.px)
+                    height(300.px)
                     borderRadius(8.px)
                     objectFit(ObjectFit.Cover)
                 }
@@ -233,9 +282,10 @@ fun TeamMemberCard(
             Div(
                 attrs = {
                     style {
-                        color(Color("#D20041"))
-                        fontSize(18.px)
-                        fontWeight(500)
+                        // TODO: Add hover effect that shows quote
+                        color(Color("#86BBD8"))
+                        fontSize(28.px)
+                        fontWeight(600)
                         textAlign("center")
                     }
                 },
