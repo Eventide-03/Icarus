@@ -120,7 +120,7 @@ fun Home() {
             }
 
             Img(
-                src = "https://eventide-03.github.io/Icarus/assets/group_photo.png",
+                src = "resources/public/assets/Group_Photo.png",
                 attrs = {
                     attr("alt", "Logo")
                     style {

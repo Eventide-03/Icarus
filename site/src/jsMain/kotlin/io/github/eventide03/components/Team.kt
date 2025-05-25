@@ -192,7 +192,7 @@ fun Team() {
                             },
                 ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sam.png", "Sam")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/om.png", "Om Gupta")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/om.PNG", "Om Gupta")
                 }
                 Link(
                     path = "#",
