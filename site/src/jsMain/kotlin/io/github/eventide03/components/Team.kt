@@ -162,8 +162,8 @@ fun Team() {
                             },
                 ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/RishiDown.png", "Rishi Mishra")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/ridam.png", "Ridam Bhatia")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/eddy.png", "Eddy Aguilar")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/Ridam.png", "Ridam Bhatia") // Fixed: uppercase R
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/Eddy.png", "Eddy Aguilar") // Fixed: uppercase E
                 }
                 Row(
                     modifier =
@@ -178,7 +178,7 @@ fun Team() {
                 ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sourish.png", "Sourish Mehta")
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/ria.png", "Ria Mishra")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/may.png", "May Hunh")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/may.png", "May Hunh") // Try lowercase filename for May
                 }
                 Row(
                     modifier =
@@ -191,8 +191,11 @@ fun Team() {
                                 marginTop(24.px)
                             },
                 ) {
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sam.png", "Sam")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/om.PNG", "Om Gupta")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sam.png", "Sam") // Try lowercase filename for Sam
+                    TeamMemberCard(
+                        "https://eventide-03.github.io/Icarus/assets/om.png", // Try lowercase filename for Om
+                        "Om Gupta",
+                    )
                 }
                 Link(
                     path = "#",
@@ -266,15 +269,41 @@ fun TeamMemberCard(
                 gap(8.px)
             },
     ) {
+        // Add an onError handler to show a fallback image if the original fails to load
         Img(
             src = imageUrl,
             attrs = {
-                attr("alt", "Team Member")
+                attr("alt", name)
+                // Print the actual URL to console for debugging
+                attr(
+                    "onload",
+                    "console.log('Successfully loaded: ' + this.src);",
+                )
+                // Improved error handler - no longer replaces with Ridam.png
+                attr(
+                    "onerror",
+                    """
+                    if (this.src.includes('May.png')) {
+                        this.src = 'https://eventide-03.github.io/Icarus/assets/may.png';
+                    } else if (this.src.includes('Sam.png')) {
+                        this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
+                    } else if (this.src.includes('Om.png')) {
+                        this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
+                    } else if (this.src.includes('Eddy.png')) {
+                        this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
+                    } else {
+                        console.error('Failed to load: ' + this.src);
+                        this.style.backgroundColor = '#D20041';
+                    }
+                    """.trimIndent(),
+                )
                 style {
                     width(300.px)
                     height(300.px)
                     borderRadius(8.px)
                     objectFit(ObjectFit.Cover)
+                    // Add a background color so we can see the element even if image fails
+                    backgroundColor(Color("#1e3a5f"))
                 }
             },
         )
