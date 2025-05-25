@@ -51,17 +51,26 @@ fun TopBar() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(12.px),
             ) {
-                Img(
-                    src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
-                    attrs = {
-                        attr("alt", "Logo")
-                        classes("top-bar-logo")
-                        style {
-                            height(40.px)
-                            marginLeft(85.px)
-                        }
-                    },
-                )
+                Link(
+                    path = "#home",
+                    modifier =
+                        Modifier.styleModifier {
+                            display(DisplayStyle.Flex)
+                            alignItems(AlignItems.Center)
+                        },
+                ) {
+                    Img(
+                        src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
+                        attrs = {
+                            attr("alt", "Logo")
+                            classes("top-bar-logo")
+                            style {
+                                height(40.px)
+                                marginLeft(85.px)
+                            }
+                        },
+                    )
+                }
                 P(
                     attrs = {
                         style {
@@ -154,4 +163,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: Make clicking logo take to home page
+// TODO: Make contact button

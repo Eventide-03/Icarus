@@ -69,7 +69,7 @@ fun Mission() {
             }
 
             Img(
-                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
+                src = "https://eventide-03.github.io/Icarus/assets/group_selfie.png",
                 attrs = {
                     attr("alt", "Mission Image")
                     style {

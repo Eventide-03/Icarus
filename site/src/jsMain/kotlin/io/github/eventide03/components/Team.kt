@@ -162,8 +162,23 @@ fun Team() {
                             },
                 ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/RishiDown.png", "Rishi Mishra")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/ridam.png", "Ridam Bhatia")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/eddy.png", "Eddy Aguilar")
+                }
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(24.px)
+                                marginTop(24.px)
+                            },
+                ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sourish.png", "Sourish Mehta")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/ria.png", "Ria Mishra")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/may.png", "May Hunh")
                 }
                 Row(
                     modifier =
@@ -176,23 +191,8 @@ fun Team() {
                                 marginTop(24.px)
                             },
                 ) {
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
-                }
-                Row(
-                    modifier =
-                        Modifier
-                            .fillMaxWidth()
-                            .styleModifier {
-                                display(DisplayStyle.Flex)
-                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
-                                gap(24.px)
-                                marginTop(24.px)
-                            },
-                ) {
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/madTesting.png", "placeholder")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/sam.png", "Sam")
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/om.png", "Om Gupta")
                 }
                 Link(
                     path = "#",
