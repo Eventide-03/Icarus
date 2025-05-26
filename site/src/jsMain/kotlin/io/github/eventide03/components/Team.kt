@@ -289,7 +289,7 @@ fun TeamMemberCard(
                         this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
                     } else if (this.src.includes('Om.png')) {
                         this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
-                    } else if (this.src.includes('Eddy.png')) {
+                    } else if (this.src.includes('eddy.png')) {
                         this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
                     } else {
                         console.error('Failed to load: ' + this.src);
