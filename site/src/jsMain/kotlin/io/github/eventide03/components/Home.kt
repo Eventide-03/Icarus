@@ -120,7 +120,7 @@ fun Home() {
             }
 
             Img(
-                src = "resources/public/assets/Group_Photo.png",
+                src = "resources/public/assets/group-photo.png",
                 attrs = {
                     attr("alt", "Logo")
                     style {
