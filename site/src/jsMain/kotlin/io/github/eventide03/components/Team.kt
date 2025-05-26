@@ -163,7 +163,7 @@ fun Team() {
                 ) {
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/RishiDown.png", "Rishi Mishra")
                     TeamMemberCard("https://eventide-03.github.io/Icarus/assets/Ridam.png", "Ridam Bhatia") // Fixed: uppercase R
-                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/Eddy.png", "Eddy Aguilar") // Fixed: uppercase E
+                    TeamMemberCard("https://eventide-03.github.io/Icarus/assets/eddy.png", "Eddy Aguilar") // Try lowercase version for Eddy since uppercase isn't working
                 }
                 Row(
                     modifier =
@@ -279,20 +279,24 @@ fun TeamMemberCard(
                     "onload",
                     "console.log('Successfully loaded: ' + this.src);",
                 )
-                // Improved error handler - no longer replaces with Ridam.png
+                // Improved error handler for case sensitivity issues
                 attr(
                     "onerror",
                     """
-                    if (this.src.includes('May.png')) {
+                    console.error('Failed to load: ' + this.src);
+                    
+                    // Try alternative case for Eddy specifically
+                    if (this.src.includes('eddy.png')) {
+                        this.src = 'https://placehold.co/300x300/1e3a5f/FFFFFF?text=Eddy';
+                    } else if (this.src.includes('Eddy.png')) {
+                        this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
+                    } else if (this.src.includes('May.png')) {
                         this.src = 'https://eventide-03.github.io/Icarus/assets/may.png';
                     } else if (this.src.includes('Sam.png')) {
                         this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
                     } else if (this.src.includes('Om.png')) {
                         this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
-                    } else if (this.src.includes('eddy.png')) {
-                        this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
                     } else {
-                        console.error('Failed to load: ' + this.src);
                         this.style.backgroundColor = '#D20041';
                     }
                     """.trimIndent(),
