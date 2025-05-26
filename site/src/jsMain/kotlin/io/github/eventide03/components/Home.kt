@@ -38,7 +38,7 @@ fun Home() {
                     .styleModifier {
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.FlexStart)
+                        justifyContent(JustifyContent.SpaceBetween)
                         boxSizing("border-box")
                         paddingLeft(96.px)
                         paddingRight(96.px)
@@ -51,7 +51,9 @@ fun Home() {
                         .styleModifier {
                             paddingTop(190.px)
                             paddingLeft(0.px)
-                            paddingRight(104.px)
+                            paddingRight(0.px)
+                            width(500.px)
+                            flexShrink(0)
                         },
             ) {
                 Box(
@@ -63,6 +65,7 @@ fun Home() {
                                 fontStyle("normal")
                                 fontWeight(600)
                                 lineHeight(76.px)
+                                whiteSpace("nowrap")
                             },
                 ) {
                     Text("Introducing Team:")
@@ -77,6 +80,7 @@ fun Home() {
                                 fontStyle("normal")
                                 fontWeight(600)
                                 lineHeight(76.px)
+                                whiteSpace("nowrap")
                             },
                 ) {
                     Text("M.A.A.D Bots")
@@ -92,6 +96,8 @@ fun Home() {
                                 fontWeight(400)
                                 lineHeight(24.px)
                                 marginTop(16.px)
+                                whiteSpace("nowrap")
+                                width(500.px)
                             },
                 ) {
                     Text("A team of high school robotics students striving to pursue their interests.")
@@ -120,14 +126,18 @@ fun Home() {
             }
 
             Img(
-                src = "resources/public/assets/group-photo.png",
+                src = "https://eventide-03.github.io/Icarus/assets/group-photo.png",
                 attrs = {
-                    attr("alt", "Logo")
+                    attr("alt", "Team Group Photo")
                     style {
-                        paddingTop(210.px)
-                        paddingLeft(200.px)
-                        maxWidth(20.percent)
+                        justifyContent(JustifyContent.Center)
+                        alignSelf("center")
+                        marginLeft(0.px)
+                        maxWidth(600.px)
+                        maxHeight(600.px)
                         property("height", "auto")
+                        marginTop(84.px)
+                        property("vertical-align", "middle")
                     }
                 },
             )
