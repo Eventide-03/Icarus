@@ -163,4 +163,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: Make contact button
+// TODO: Make contact button, branding guide, footer, hover animations for Team

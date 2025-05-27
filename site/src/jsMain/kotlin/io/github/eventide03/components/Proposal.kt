@@ -1,6 +1,10 @@
 package io.github.eventide03.components
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.varabyte.kobweb.compose.css.scrollMarginTop
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -11,6 +15,47 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun Proposal() {
+    // State for fullscreen image
+    var isFullscreenActive by remember { mutableStateOf(false) }
+    var fullscreenImageSrc by remember { mutableStateOf("") }
+
+    // Fullscreen overlay component
+    if (isFullscreenActive) {
+        Div(
+            attrs = {
+                style {
+                    position(Position.Fixed)
+                    top(0.px)
+                    left(0.px)
+                    width(100.percent)
+                    height(100.percent)
+                    backgroundColor(rgba(0, 0, 0, 0.9))
+                    property("z-index", "1000") // Fixed: replaced zIndex(1000) with property
+                    display(DisplayStyle.Flex)
+                    justifyContent(JustifyContent.Center)
+                    alignItems(AlignItems.Center)
+                    cursor("pointer")
+                }
+                onClick {
+                    isFullscreenActive = false
+                }
+            },
+        ) {
+            Img(
+                src = fullscreenImageSrc,
+                attrs = {
+                    style {
+                        maxWidth(90.percent)
+                        maxHeight(90.percent)
+                        property("object-fit", "contain")
+                    }
+                    // Stop propagation to prevent closing when clicking on the image itself
+                    onClick { it.stopPropagation() }
+                },
+            )
+        }
+    }
+
     Column(
         modifier =
             Modifier
@@ -70,10 +115,10 @@ fun Proposal() {
                     attrs = {
                         style {
                             color(Color("#FFFFFF"))
-                            fontSize(20.px)
+                            fontSize(24.px)
                             fontWeight(500)
                             marginTop(0.px)
-                            marginBottom(10.px)
+                            marginBottom(7.px)
                         }
                     },
                 ) {
@@ -119,16 +164,351 @@ fun Proposal() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Column(
-                modifier = Modifier.weight(1f),
+                modifier =
+                    Modifier.weight(1f).styleModifier {
+                        display(DisplayStyle.Flex)
+                        flexDirection(FlexDirection.Column)
+                        alignItems(AlignItems.Center) // Center children horizontally
+                    },
             ) {
                 H3(
                     attrs = {
                         style {
                             color(Color("#FFFFFF"))
-                            fontSize(20.px)
+                            fontSize(24.px)
                             fontWeight(500)
                             marginTop(0.px)
-                            marginBottom(10.px)
+                            marginBottom(7.px)
+                            alignSelf("flex-start") // Keep the heading left-aligned
+                        }
+                    },
+                ) {
+                    Text("CAD and Progress")
+                }
+                Div(
+                    attrs = {
+                        style {
+                            display(DisplayStyle.Flex)
+                            flexDirection(FlexDirection.Column)
+                            gap(16.px)
+                            marginTop(0.px)
+                            marginBottom(20.px)
+                            maxWidth(100.percent) // Ensure it doesn't go off page
+                            alignSelf("stretch") // Take full width of parent
+                        }
+                    },
+                ) {
+                    // Gallery title
+                    P(
+                        attrs = {
+                            style {
+                                color(Color("#F5E5CC"))
+                                fontSize(16.px)
+                                lineHeight(24.px)
+                                marginTop(0.px)
+                                marginBottom(10.px)
+                                alignSelf("flex-start") // Keep the title left-aligned
+                            }
+                        },
+                    ) {
+                        Text("Project Gallery")
+                    }
+
+                    // Gallery with navigation buttons
+                    Div(
+                        attrs = {
+                            style {
+                                display(DisplayStyle.Flex)
+                                flexDirection(FlexDirection.Row)
+                                alignItems(AlignItems.Center)
+                                justifyContent(JustifyContent.Center) // Center the gallery
+                                gap(8.px)
+                                width(100.percent)
+                                property("margin", "0 auto") // Center the container horizontally
+                                property("text-align", "center") // Center inline elements
+                            }
+                        },
+                    ) {
+                        // Left scroll button
+                        Button(
+                            attrs = {
+                                id("gallery-left-btn")
+                                onClick {
+                                    // Use JavaScript to scroll the gallery left
+                                    js("document.getElementById('gallery-scroll-container').scrollBy({left: -366, behavior: 'smooth'})")
+                                }
+                                style {
+                                    backgroundColor(rgba(0, 0, 0, 0.5))
+                                    color(Color.white)
+                                    border(0.px)
+                                    borderRadius(4.px)
+                                    padding(8.px)
+                                    cursor("pointer")
+                                    minWidth(40.px)
+                                    height(40.px)
+                                    display(DisplayStyle.Flex)
+                                    alignItems(AlignItems.Center)
+                                    justifyContent(JustifyContent.Center)
+                                    opacity(0.5) // Start with left button faded since we're at the beginning
+                                }
+                            },
+                        ) {
+                            Text("←")
+                        }
+
+                        // Fixed border container - does not scroll
+                        Div(
+                            attrs = {
+                                id("gallery-container")
+                                style {
+                                    width(1000.px) // Fixed width
+                                    maxWidth(100.percent) // Ensure it doesn't exceed parent width
+                                    height(320.px) // Fixed height
+                                    backgroundColor(rgba(0, 0, 0, 0.2)) // Border background
+                                    borderRadius(8.px) // Rounded corners
+                                    property("position", "relative") // For absolute positioning of child
+                                    property("overflow", "hidden") // Hide overflow
+                                    property("padding", "0") // Remove padding to prevent overlap
+                                    border(1.px, LineStyle.Solid, rgba(255, 255, 255, 0.1)) // Add visible border
+                                }
+                            },
+                        ) {
+                            // Inner scrollable container - holds the images and scrolls
+                            Div(
+                                attrs = {
+                                    id("gallery-scroll-container")
+                                    style {
+                                        display(DisplayStyle.Flex)
+                                        // Position absolutely within parent container
+                                        property("position", "absolute")
+                                        property("top", "8px")
+                                        property("left", "8px")
+                                        property("right", "8px")
+                                        property("bottom", "8px")
+                                        // Scrolling settings
+                                        overflowX("scroll")
+                                        property("scroll-behavior", "smooth")
+                                        // Add scroll snap for better control
+                                        property("scroll-snap-type", "x mandatory")
+                                        // Hide scrollbar but keep functionality
+                                        property("scrollbar-width", "none") // Firefox
+                                        property("-ms-overflow-style", "none") // IE/Edge
+                                        property("::-webkit-scrollbar", "{ display: none; }") // Chrome/Safari
+                                        // Ensure content doesn't wrap
+                                        property("flex-wrap", "nowrap")
+                                        property("align-items", "center")
+                                    }
+                                    // Update button states based on scroll position
+                                    attr(
+                                        "onscroll",
+                                        """
+                                        var container = this;
+                                        var scrollLeft = container.scrollLeft;
+                                        var scrollWidth = container.scrollWidth;
+                                        var clientWidth = container.clientWidth;
+                                        
+                                        // Hide left arrows when at start
+                                        if (scrollLeft <= 10) {
+                                            document.getElementById('gallery-left-btn').style.opacity = '0.5';
+                                        } else {
+                                            document.getElementById('gallery-left-btn').style.opacity = '1';
+                                        }
+                                        
+                                        // Hide right arrows when at end
+                                        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+                                            document.getElementById('gallery-right-btn').style.opacity = '0.5';
+                                        } else {
+                                            document.getElementById('gallery-right-btn').style.opacity = '1';
+                                        }
+                                        """,
+                                    )
+                                },
+                            ) {
+                                // Non-scrollable spacer at the beginning
+                                Div(
+                                    attrs = {
+                                        style {
+                                            minWidth(8.px)
+                                            height(300.px)
+                                            property("flex-shrink", "0")
+                                        }
+                                    },
+                                )
+
+                                // TODO: add images
+                                Img(
+                                    src = "/assets/madTesting.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            marginRight(16.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            // Add cursor pointer to indicate clickability
+                                            cursor("pointer")
+                                        }
+                                        // Add onClick handler to show fullscreen
+                                        onClick {
+                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+                                Img(
+                                    src = "/assets/madTesting.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            marginRight(16.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            cursor("pointer")
+                                        }
+                                        onClick {
+                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+                                Img(
+                                    src = "/assets/madTesting.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            marginRight(16.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            cursor("pointer")
+                                        }
+                                        onClick {
+                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+                                Img(
+                                    src = "/assets/madTesting.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            marginRight(16.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            cursor("pointer")
+                                        }
+                                        onClick {
+                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+                                Img(
+                                    src = "/assets/madTesting.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            cursor("pointer")
+                                        }
+                                        onClick {
+                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+
+                                // Non-scrollable spacer at the end
+                                Div(
+                                    attrs = {
+                                        style {
+                                            minWidth(8.px)
+                                            height(300.px)
+                                            property("flex-shrink", "0")
+                                        }
+                                    },
+                                )
+                            }
+                        }
+
+                        // Right scroll button
+                        Button(
+                            attrs = {
+                                id("gallery-right-btn")
+                                onClick {
+                                    // Scroll by exactly one image width plus gap
+                                    js(
+                                        """
+                                        var container = document.getElementById('gallery-scroll-container');
+                                        var imageWidth = 350; // Width of each image
+                                        var gap = 16; // Gap between images
+                                        container.scrollBy({left: imageWidth + gap, behavior: 'smooth'});
+                                    """,
+                                    )
+                                }
+                                style {
+                                    backgroundColor(rgba(0, 0, 0, 0.5))
+                                    color(Color.white)
+                                    border(0.px)
+                                    borderRadius(4.px)
+                                    padding(8.px)
+                                    cursor("pointer")
+                                    minWidth(40.px)
+                                    height(40.px)
+                                    display(DisplayStyle.Flex)
+                                    alignItems(AlignItems.Center)
+                                    justifyContent(JustifyContent.Center)
+                                }
+                            },
+                        ) {
+                            Text("→")
+                        }
+                    }
+                }
+                H3(
+                    attrs = {
+                        style {
+                            color(Color("#FFFFFF"))
+                            fontSize(24.px)
+                            fontWeight(500)
+                            marginTop(20.px)
+                            marginBottom(7.px)
+                            alignSelf("flex-start") // Add this to left-align the heading
                         }
                     },
                 ) {
@@ -683,7 +1063,9 @@ fun Proposal() {
                                     }
                                 },
                             ) {
-                                Text("Plug sleeves - Plastic Tube Plug Sleeve (2\"x2\"x.06\", 1/4\" Clearance) (2-Pack) (WCP-0377)")
+                                Text(
+                                    "Plug sleeves - Plastic Tube Plug Sleeve (2\"x2\"x.06\", 1/4\" Clearance) (2-Pack) (WCP-0377)",
+                                )
                             }
                         }
                         Td(
@@ -751,7 +1133,9 @@ fun Proposal() {
                                     }
                                 },
                             ) {
-                                Text("Infrastructure mounting plate - tower mounting plate (fabworks)")
+                                Text(
+                                    "Infrastructure mounting plate - tower mounting plate (fabworks)",
+                                )
                             }
                         }
                         Td(
@@ -1794,7 +2178,9 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("3\" OD x 1\" Wide Straight Flex Wheel (1-1/4\" Round Stretch, 30A) (WCP-1358)")
+                            Text(
+                                "3\" OD x 1\" Wide Straight Flex Wheel (1-1/4\" Round Stretch, 30A) (WCP-1358)",
+                            )
                         }
                         Td(
                             attrs = {
@@ -1908,7 +2294,9 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("10.25mm (3/8\" Rounded Hex) ID x 0.875\" OD x 0.280\" WD (Flanged Bearing) (WCP-0784)")
+                            Text(
+                                "10.25mm (3/8\" Rounded Hex) ID x 0.875\" OD x 0.280\" WD (Flanged Bearing) (WCP-0784)",
+                            )
                         }
                         Td(
                             attrs = {
@@ -2022,7 +2410,9 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("Aluminum Spacers (.196\" ID x 3/8\" OD x 3/4\" WD) (5-Pack) (WCP-0217)")
+                            Text(
+                                "Aluminum Spacers (.196\" ID x 3/8\" OD x 3/4\" WD) (5-Pack) (WCP-0217)",
+                            )
                         }
                         Td(
                             attrs = {
@@ -2183,19 +2573,70 @@ fun Proposal() {
                             Text("$481.44")
                         }
                     }
-                }
-                H3(
-                    attrs = {
-                        style {
-                            color(Color("#FFFFFF"))
-                            fontSize(20.px)
-                            fontWeight(500)
-                            marginTop(0.px)
-                            marginBottom(10.px)
+
+                    // Total row
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-top", "2px solid #F5E5CC")
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                    fontWeight(700)
+                                }
+                            },
+                        ) {
+                            Text("TOTAL")
                         }
-                    },
-                ) {
-                    Text("CAD and Progress")
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-top", "2px solid #F5E5CC")
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-top", "2px solid #F5E5CC")
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-top", "2px solid #F5E5CC")
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                    textAlign("right")
+                                    fontWeight(700)
+                                }
+                            },
+                        ) {
+                            Text("$5,000.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-top", "2px solid #F5E5CC")
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                    textAlign("right")
+                                    fontWeight(700)
+                                }
+                            },
+                        ) {
+                            Text("$5,000.00")
+                        }
+                    }
                 }
             }
         }

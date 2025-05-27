@@ -27,7 +27,7 @@ fun Home() {
                     alignItems(AlignItems.FlexStart)
                     boxSizing("border-box")
                     flexShrink(0)
-                    paddingTop(84.px)
+                    paddingTop(60.px)
                     scrollMarginTop(84.px)
                 },
     ) {
@@ -68,7 +68,7 @@ fun Home() {
                                 whiteSpace("nowrap")
                             },
                 ) {
-                    Text("Introducing Team:")
+                    Text("RIVAL Team:")
                 }
 
                 Box(
@@ -136,7 +136,7 @@ fun Home() {
                         maxWidth(600.px)
                         maxHeight(600.px)
                         property("height", "auto")
-                        marginTop(84.px)
+                        marginTop(90.px)
                         property("vertical-align", "middle")
                     }
                 },
