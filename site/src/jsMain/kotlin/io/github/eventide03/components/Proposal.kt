@@ -592,6 +592,7 @@ fun Proposal() {
                         }
                     },
                 ) {
+                    // Header row
                     Tr {
                         listOf("Description", "Quantity", "Unit Cost", "Total Cost", "Estimated Total").forEach { header ->
                             Th(
@@ -609,7 +610,25 @@ fun Proposal() {
                         }
                     }
 
-                    // Field Perimeter and Tiles
+                    // --- DRIVETRAIN COMPONENTS ---
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    fontWeight(600)
+                                    fontSize(16.px)
+                                    color(Color("#D20041"))
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                }
+                                attr("colspan", "5")
+                            },
+                        ) {
+                            Text("DRIVETRAIN COMPONENTS")
+                        }
+                    }
+
+                    // Flipsky 5065
                     Tr {
                         Td(
                             attrs = {
@@ -619,18 +638,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            A(
-                                attrs = {
-                                    attr("href", "https://www.andymark.com/products/first-tech-challenge-perimeter-kit-b")
-                                    attr("target", "_blank")
-                                    style {
-                                        color(Color("#F5E5CC"))
-                                        textDecoration("underline")
-                                    }
-                                },
-                            ) {
-                                Text("12x12' perimeter - FIRST Tech Challenge Perimeter Kit (AndyMark)")
-                            }
+                            Text("Flipsky 5065")
                         }
                         Td(
                             attrs = {
@@ -641,7 +649,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("1")
+                            Text("2")
                         }
                         Td(
                             attrs = {
@@ -652,7 +660,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$659.00")
+                            Text("$41.00")
                         }
                         Td(
                             attrs = {
@@ -663,7 +671,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$659.00")
+                            Text("$82.00")
                         }
                         Td(
                             attrs = {
@@ -678,6 +686,7 @@ fun Proposal() {
                         }
                     }
 
+                    // 15T pulley
                     Tr {
                         Td(
                             attrs = {
@@ -687,21 +696,65 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            A(
-                                attrs = {
-                                    attr(
-                                        "href",
-                                        "https://www.andymark.com/products/soft-tiles-for-first-tech-challenge-field-options?via=Z2lkOi8vYW5keW1hcmsvV29ya2FyZWE6Ok5hdmlnYXRpb246OlNlYXJjaFJlc3VsdHMvJTdCJTIyYnV0dG9uJTIyJTNBJTIyc2VhcmNoJTIyJTJDJTIycSUyMiUzQSUyMnRpbGVzJTIyJTJDJTIydXRmOCUyMiUzQSUyMiVFMiU5QyU5MyUyMiU3RA&Amount=36%20(am-2499-36)&quantity=1",
-                                    )
-                                    attr("target", "_blank")
-                                    style {
-                                        color(Color("#F5E5CC"))
-                                        textDecoration("underline")
-                                    }
-                                },
-                            ) {
-                                Text("12x12' foam tiles - FIRST Tech Challenge Field Soft Tiles (AndyMark)")
-                            }
+                            Text("15T pulley")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$3.90")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$7.80")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Anti Spark Switch
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Anti Spark Switch")
                         }
                         Td(
                             attrs = {
@@ -723,7 +776,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$259.00")
+                            Text("$24.00")
                         }
                         Td(
                             attrs = {
@@ -734,7 +787,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$259.00")
+                            Text("$24.00")
                         }
                         Td(
                             attrs = {
@@ -745,11 +798,865 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$918.00")
+                            Text("")
                         }
                     }
 
-                    // McMaster and WCP Parts
+                    // Flipsky FESC 6.7 Pro Mini 70A
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Flipsky FESC 6.7 Pro Mini 70A")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$62.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$124.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // 3" OD x 1" Wide Straight Flex Wheel (1-1/4" Round Stretch, 30A) (WCP-1358)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text(
+                                "3\" OD x 1\" Wide Straight Flex Wheel (1-1/4\" Round Stretch, 30A) (WCP-1358)",
+                            )
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("4")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$7.49")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$29.96")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // 159" ID x .375" OD Rounded Hex Stock (36") (WCP-0911)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("159\" ID x .375\" OD Rounded Hex Stock (36\") (WCP-0911)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("8")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$0.56")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$4.44")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // 10.25mm (3/8" Rounded Hex) ID x 0.875" OD x 0.280" WD (Flanged Bearing) (WCP-0784)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text(
+                                "10.25mm (3/8\" Rounded Hex) ID x 0.875\" OD x 0.280\" WD (Flanged Bearing) (WCP-0784)",
+                            )
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("8")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$1.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$15.92")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // 0.375" ID x 0.875" OD x 0.281" WD (Radial Bearing) (WCP-0776)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("0.375\" ID x 0.875\" OD x 0.281\" WD (Radial Bearing) (WCP-0776)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("4")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$1.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$7.96")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Aluminum Spacers (.196" ID x 3/8" OD x 3/4" WD) (5-Pack) (WCP-0217)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text(
+                                "Aluminum Spacers (.196\" ID x 3/8\" OD x 3/4\" WD) (5-Pack) (WCP-0217)",
+                            )
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$0.70")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$1.40")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // 6" Aluminum Nutstrip (#10-32, .500" Spacing) (WCP-0336)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("6\" Aluminum Nutstrip (#10-32, .500\" Spacing) (WCP-0336)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("4")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$9.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$39.96")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Fabworks sheet metal
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Fabworks sheet metal")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("1")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$144.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$144.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$481.44")
+                        }
+                    }
+
+                    // --- ROBOT SUBSYSTEMS ---
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    fontWeight(600)
+                                    fontSize(16.px)
+                                    color(Color("#D20041"))
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                }
+                                attr("colspan", "5")
+                            },
+                        ) {
+                            Text("ROBOT SUBSYSTEMS")
+                        }
+                    }
+
+                    // Intake Rollers
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Intake Rollers (4\" compliant wheels)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("4")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$7.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$31.96")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Flywheel Motors
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Flywheel Motors (NEO 550 or similar)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$49.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$99.98")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Motor Controllers
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Motor Controllers (Spark MAX or similar)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("4")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$89.99")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$359.96")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Intake Belts
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Intake Belts (timing belts)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$12.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$24.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Sensors (Vision, Encoders, etc.)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Sensors (Vision, Encoders, etc.)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("5")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$35.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$175.00")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // Control System (Raspberry Pi, Orange Pi, etc.)
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                }
+                            },
+                        ) {
+                            Text("Control System (Raspberry Pi, Orange Pi, etc.)")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("center")
+                                }
+                            },
+                        ) {
+                            Text("2")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$90.30")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("$180.54")
+                        }
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
+                                    textAlign("right")
+                                }
+                            },
+                        ) {
+                            Text("")
+                        }
+                    }
+
+                    // --- FIELD PARTS ---
+                    Tr {
+                        Td(
+                            attrs = {
+                                style {
+                                    padding(8.px)
+                                    fontWeight(600)
+                                    fontSize(16.px)
+                                    color(Color("#D20041"))
+                                    property("border-bottom", "2px solid #F5E5CC")
+                                }
+                                attr("colspan", "5")
+                            },
+                        ) {
+                            Text("FIELD PARTS")
+                        }
+                    }
+
+                    // L1 tray - Food Industry Plastic Pans (Mcmaster 8475T8)
                     Tr {
                         Td(
                             attrs = {
@@ -818,6 +1725,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Silo tube - Impact-Resistant Polycarbonate Round Tube (Mcmaster 8585K39)
                     Tr {
                         Td(
                             attrs = {
@@ -886,6 +1794,7 @@ fun Proposal() {
                         }
                     }
 
+                    // L2 container - Plastic Bin Box (Mcmaster 42185T605)
                     Tr {
                         Td(
                             attrs = {
@@ -954,6 +1863,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Infrastructure square tube - 2" x 2" x 0.09375" Aluminum Tube Stock with Hole Pattern (47") (WCP-1587)
                     Tr {
                         Td(
                             attrs = {
@@ -1024,7 +1934,7 @@ fun Proposal() {
                         }
                     }
 
-                    // More parts
+                    // Tube plugs - Aluminum Tube Plug (2"x2"x.125", #10-32 Tapped) (WCP-0373)
                     Tr {
                         Td(
                             attrs = {
@@ -1093,6 +2003,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Plug sleeves - Plastic Tube Plug Sleeve (2"x2"x.06", 1/4" Clearance) (2-Pack) (WCP-0377)
                     Tr {
                         Td(
                             attrs = {
@@ -1163,6 +2074,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Feeder mount - feeder mount (fabworks)
                     Tr {
                         Td(
                             attrs = {
@@ -1183,144 +2095,8 @@ fun Proposal() {
                                 },
                             ) {
                                 Text(
-                                    "Infrastructure mounting plate - tower mounting plate (fabworks)",
+                                    "Feeder mount - feeder mount (fabworks)",
                                 )
-                            }
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("4")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$33.82")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$135.28")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            A(
-                                attrs = {
-                                    attr("href", "https://www.vexrobotics.com/276-9091.html")
-                                    attr("target", "_blank")
-                                    style {
-                                        color(Color("#F5E5CC"))
-                                        textDecoration("underline")
-                                    }
-                                },
-                            ) {
-                                Text("Infrastructure baseplate - tower baseplate (Vex)")
-                            }
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("4")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$7.75")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$30.99")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            A(
-                                attrs = {
-                                    attr("href", "https://www.fabworks.com/share/5Hm6WPxrYnI9")
-                                    attr("target", "_blank")
-                                    style {
-                                        color(Color("#F5E5CC"))
-                                        textDecoration("underline")
-                                    }
-                                },
-                            ) {
-                                Text("Feeder mount - feeder mount (fabworks)")
                             }
                         }
                         Td(
@@ -1369,6 +2145,7 @@ fun Proposal() {
                         }
                     }
 
+                    // L1 mount 3DP version
                     Tr {
                         Td(
                             attrs = {
@@ -1426,6 +2203,7 @@ fun Proposal() {
                         }
                     }
 
+                    // April tag plate - april tag plate (fabworks)
                     Tr {
                         Td(
                             attrs = {
@@ -1494,6 +2272,7 @@ fun Proposal() {
                         }
                     }
 
+                    // April tag mount 3dp
                     Tr {
                         Td(
                             attrs = {
@@ -1551,6 +2330,7 @@ fun Proposal() {
                         }
                     }
 
+                    // L3 3dp insert
                     Tr {
                         Td(
                             attrs = {
@@ -1608,6 +2388,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Feeder plug 3dp
                     Tr {
                         Td(
                             attrs = {
@@ -1665,6 +2446,7 @@ fun Proposal() {
                         }
                     }
 
+                    // L2 spacer 3dp
                     Tr {
                         Td(
                             attrs = {
@@ -1722,7 +2504,7 @@ fun Proposal() {
                         }
                     }
 
-                    // Bump parts
+                    // Bump - bump (fabworks)
                     Tr {
                         Td(
                             attrs = {
@@ -1791,6 +2573,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Bump connector - bump connector (fabworks)
                     Tr {
                         Td(
                             attrs = {
@@ -1859,6 +2642,7 @@ fun Proposal() {
                         }
                     }
 
+                    // Bump baseplate - bump baseplate (fabworks)
                     Tr {
                         Td(
                             attrs = {
@@ -1927,703 +2711,7 @@ fun Proposal() {
                         }
                     }
 
-                    // Drivetrain components
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    fontWeight(600)
-                                }
-                            },
-                        ) {
-                            Text("Drivetrain Components")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                    fontWeight(600)
-                                }
-                            },
-                        ) {
-                            Text("Qty")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                    fontWeight(600)
-                                }
-                            },
-                        ) {
-                            Text("Unit Cost")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                    fontWeight(600)
-                                }
-                            },
-                        ) {
-                            Text("Total Cost")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                    fontWeight(600)
-                                }
-                            },
-                        ) {
-                            Text("Total")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("Flipsky 5065")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("2")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$41.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$82.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("15T pulley")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("2")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$3.90")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$7.80")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("Anti Spark Switch")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("1")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$24.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$24.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("Flipsky FESC 6.7 Pro Mini 70A")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("2")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$62.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$124.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text(
-                                "3\" OD x 1\" Wide Straight Flex Wheel (1-1/4\" Round Stretch, 30A) (WCP-1358)",
-                            )
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("4")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$7.49")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$29.96")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("159\" ID x .375\" OD Rounded Hex Stock (36\") (WCP-0911)")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("8")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$0.56")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$4.44")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text(
-                                "10.25mm (3/8\" Rounded Hex) ID x 0.875\" OD x 0.280\" WD (Flanged Bearing) (WCP-0784)",
-                            )
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("8")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$1.99")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$15.92")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("0.375\" ID x 0.875\" OD x 0.281\" WD (Radial Bearing) (WCP-0776)")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("4")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$1.99")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$7.96")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text(
-                                "Aluminum Spacers (.196\" ID x 3/8\" OD x 3/4\" WD) (5-Pack) (WCP-0217)",
-                            )
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("2")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$0.70")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$1.40")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("6\" Aluminum Nutstrip (#10-32, .500\" Spacing) (WCP-0336)")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("4")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$9.99")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$39.96")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("")
-                        }
-                    }
-
-                    Tr {
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                }
-                            },
-                        ) {
-                            Text("Fabworks sheet metal")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("center")
-                                }
-                            },
-                        ) {
-                            Text("1")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$144.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$144.00")
-                        }
-                        Td(
-                            attrs = {
-                                style {
-                                    padding(8.px)
-                                    property("border-bottom", "1px solid rgba(245, 229, 204, 0.3)")
-                                    textAlign("right")
-                                }
-                            },
-                        ) {
-                            Text("$481.44")
-                        }
-                    }
-
-                    // Total row
+                    // --- TOTAL ROW ---
                     Tr {
                         Td(
                             attrs = {
@@ -2670,7 +2758,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$5,000.00")
+                            Text("$5,060.54")
                         }
                         Td(
                             attrs = {
@@ -2683,7 +2771,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("$5,000.00")
+                            Text("$5,060.60")
                         }
                     }
                 }
