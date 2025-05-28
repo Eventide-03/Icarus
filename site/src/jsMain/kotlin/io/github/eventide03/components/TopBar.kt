@@ -162,4 +162,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: BOM, instagram
+// TODO: BOM, for some reason the site works with a basepath rather than without and it might be because of the stuff I did in AppEntry.kt anyways fix site icon rishi

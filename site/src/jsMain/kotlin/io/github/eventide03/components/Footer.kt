@@ -107,7 +107,7 @@ fun Footer() {
                     // Instagram Logo
                     A(
                         attrs = {
-                            attr("href", "#")
+                            attr("href", "https://www.instagram.com/m.a.a.dbots/")
                             attr("title", "Instagram")
                             style {
                                 display(DisplayStyle.Flex)
