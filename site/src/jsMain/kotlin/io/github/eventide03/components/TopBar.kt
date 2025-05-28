@@ -162,4 +162,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: images, BOM, logo, instagram
+// TODO: BOM, instagram

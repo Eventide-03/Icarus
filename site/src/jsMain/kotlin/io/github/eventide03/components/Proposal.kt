@@ -386,29 +386,6 @@ fun Proposal() {
                                     },
                                 )
                                 Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            marginRight(16.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            cursor("pointer")
-                                        }
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
-                                Img(
                                     src = "https://eventide-03.github.io/Icarus/assets/sketch.png",
                                     attrs = {
                                         style {
@@ -450,6 +427,29 @@ fun Proposal() {
                                         }
                                         onClick {
                                             fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/basicsketch.png"
+                                            isFullscreenActive = true
+                                        }
+                                    },
+                                )
+                                Img(
+                                    src = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
+                                    attrs = {
+                                        style {
+                                            height(300.px)
+                                            width(350.px)
+                                            minWidth(350.px)
+                                            property("object-fit", "cover")
+                                            borderRadius(8.px)
+                                            // Ensure image doesn't expand outside container
+                                            property("flex-shrink", "0")
+                                            marginBottom(0.px)
+                                            marginRight(16.px)
+                                            // Add scroll snap align
+                                            property("scroll-snap-align", "center")
+                                            cursor("pointer")
+                                        }
+                                        onClick {
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png"
                                             isFullscreenActive = true
                                         }
                                     },
@@ -547,14 +547,40 @@ fun Proposal() {
                             lineHeight(24.px)
                             whiteSpace("pre-line")
                             marginTop(0.px)
-                            marginBottom(20.px)
+                            marginBottom(10.px) // Reduced from 20px to make room for the link
                         }
                     },
                 ) {
                     Text(
-                        "We are requesting a budget of $5000 to cover the costs of materials, tools, and components needed for the robot's construction and testing. This budget will allow us to build a competitive robot that meets the requirements of the RIVAL competition.",
+                        "Our core needs require a budget of around $2500 to cover the costs of materials and components needed for the robot's construction and testing. The addition of amenities and parts that are convinient in creating a robust system increases the budget to around $5000. Any and all donations will be greatly appreciated, and will be used to cover the costs of the robot's construction. Financials and monetary spending information can be found on our HCB (Hack Club Bank) Homepage.",
                     )
                 }
+
+                // Add link to HCB homepage
+                A(
+                    attrs = {
+                        attr(
+                            "href",
+                            "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/transactions?action=ledger&controller=events&event_id=m-a-a-d-bots-rival-team",
+                        )
+                        attr("target", "_blank")
+                        style {
+                            color(Color("#F5E5CC"))
+                            fontSize(17.px)
+                            fontWeight(700)
+                            textDecoration("none")
+                            marginBottom(20.px)
+                            alignSelf("flex-start") // Keep the link left-aligned
+                            display(DisplayStyle.Block)
+                        }
+                        // Add hover effect
+                        attr("onmouseover", "this.style.textDecoration='underline';")
+                        attr("onmouseout", "this.style.textDecoration='none';")
+                    },
+                ) {
+                    Text("HCB Homepage")
+                }
+
                 Table(
                     attrs = {
                         style {
@@ -1912,7 +1938,7 @@ fun Proposal() {
                                 }
                             },
                         ) {
-                            Text("Item")
+                            Text("Drivetrain Components")
                         }
                         Td(
                             attrs = {
