@@ -12,7 +12,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("The official website for MAAD Bots, a robotics team based in the Southern California.")
         }
     }
 }
