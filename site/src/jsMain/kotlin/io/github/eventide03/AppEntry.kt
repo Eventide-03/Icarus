@@ -1,4 +1,4 @@
-
+/*
 package io.github.eventide03
 
 import androidx.compose.runtime.Composable
@@ -43,8 +43,8 @@ fun initSilk(ctx: InitSilkContext) {
         """.trimIndent()
     document.head?.appendChild(script)
 }
+*/
 
-/*
 package io.github.eventide03
 
 import androidx.compose.runtime.Composable
@@ -69,4 +69,3 @@ fun AppEntry(content: @Composable () -> Unit) {
         }
     }
 }
-*/
