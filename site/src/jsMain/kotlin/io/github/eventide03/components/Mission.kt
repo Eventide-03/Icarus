@@ -63,7 +63,7 @@ fun Mission() {
                     },
                 ) {
                     Text(
-                        "Our mission is to inspire and empower the next generation of innovators through robotics. We strive to create cutting-edge robotic solutions that push the boundaries of what's possible while fostering a collaborative environment where creativity, technical excellence, and strategic thinking flourish. Through dedication, teamwork, and continuous learning, we aim to develop not just competitive robots, but also the skills and character that will prepare team members for future challenges in STEM fields and beyond.",
+                        "We are a completely student run organization, currently lead by our founder, Rishi Mishra (also the one writing this paragraph). Through our experiences, we understand that robotics is difficult, mainly due to lack of accessibility to training, and resources. Our mission is not only to inspire an interest in innovation to a wide audience of high schoolers, but to show our members the limitless possibilities of robotics, literally anything can be automated, all it takes is the resources and knowledge. We build robots as a team. Many of our members have taken a part in robotics competitions such as FRC, FTC, and VEX, we aim to take those skills to the next level, training students in the design and creation of completely custom robots, not limited by average competition standards. We also emphasize teamwork, and learning together, shared experience and knowledge is a necessity in creating a sustainable team.",
                     )
                 }
             }

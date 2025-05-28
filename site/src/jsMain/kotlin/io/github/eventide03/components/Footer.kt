@@ -140,7 +140,6 @@ fun Footer() {
                     A(
                         attrs = {
                             attr("href", "https://github.com/Eventide-03/Icarus")
-                            // TODO: link this to the actual GitHub repo
                             attr("title", "GitHub")
                             style {
                                 display(DisplayStyle.Flex)

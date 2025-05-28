@@ -381,3 +381,4 @@ fun TeamMemberCard(
         }
     }
 }
+// TODO: people descriptions either below or hover over image

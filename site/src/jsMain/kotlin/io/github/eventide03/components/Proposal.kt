@@ -335,7 +335,6 @@ fun Proposal() {
                                     },
                                 )
 
-                                // TODO: add images
                                 Img(
                                     src = "/assets/madTesting.png",
                                     attrs = {
@@ -531,7 +530,6 @@ fun Proposal() {
                         "We are requesting a budget of $5000 to cover the costs of materials, tools, and components needed for the robot's construction and testing. This budget will allow us to build a competitive robot that meets the requirements of the RIVAL competition.",
                     )
                 }
-// TODO: fix the table
                 Table(
                     attrs = {
                         style {

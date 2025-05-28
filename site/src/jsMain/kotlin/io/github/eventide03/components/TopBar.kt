@@ -60,6 +60,7 @@ fun TopBar() {
                         },
                 ) {
                     Img(
+                        // TODO: get a logo
                         src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
                         attrs = {
                             attr("alt", "Logo")
@@ -126,7 +127,6 @@ fun TopBar() {
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Link(
-                        // TODO: scroll animations and js stuff
                         path = "#",
                         text = "Contact",
                         modifier =
@@ -163,4 +163,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: Make contact button, branding guide, footer, hover animations for Team
+// TODO: Branding Statement, Make contact button, branding guide, images, BOM, footer

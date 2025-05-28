@@ -27,7 +27,7 @@ fun Home() {
                     alignItems(AlignItems.FlexStart)
                     boxSizing("border-box")
                     flexShrink(0)
-                    paddingTop(60.px)
+                    paddingTop(20.px)
                     scrollMarginTop(84.px)
                 },
     ) {
@@ -91,7 +91,7 @@ fun Home() {
                         Modifier
                             .styleModifier {
                                 color(Color("#F5E5CC"))
-                                fontSize(16.px)
+                                fontSize(17.px)
                                 fontStyle("normal")
                                 fontWeight(400)
                                 lineHeight(24.px)
@@ -136,7 +136,7 @@ fun Home() {
                         maxWidth(600.px)
                         maxHeight(600.px)
                         property("height", "auto")
-                        marginTop(90.px)
+                        marginTop(120.px)
                         property("vertical-align", "middle")
                     }
                 },
