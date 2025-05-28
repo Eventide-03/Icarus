@@ -60,8 +60,7 @@ fun TopBar() {
                         },
                 ) {
                     Img(
-                        // TODO: get a logo
-                        src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
+                        src = "https://eventide-03.github.io/Icarus/assets/teamlogo.png",
                         attrs = {
                             attr("alt", "Logo")
                             classes("top-bar-logo")
@@ -127,7 +126,7 @@ fun TopBar() {
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Link(
-                        path = "#",
+                        path = "https://linktr.ee/MAADBots",
                         text = "Contact",
                         modifier =
                             Modifier.styleModifier {
@@ -145,14 +144,14 @@ fun TopBar() {
                     )
                     Link(
                         path = "https://hcb.hackclub.com/donations/start/m-a-a-d-bots-rival-team",
-                        text = "Contribute",
+                        text = "Join Us",
                         modifier =
                             Modifier.styleModifier {
                                 color(Color("#F5E5CC"))
                                 fontSize(16.px)
                                 fontWeight(500)
                                 lineHeight(24.px)
-                                padding(10.px, 20.px)
+                                padding(10.px, 25.px)
                                 borderRadius(6.px)
                                 backgroundColor(Color("#D20041"))
                                 property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
@@ -163,4 +162,4 @@ fun TopBar() {
         }
     }
 }
-// TODO: Branding Statement, Make contact button, branding guide, images, BOM, footer
+// TODO: images, BOM, logo, instagram

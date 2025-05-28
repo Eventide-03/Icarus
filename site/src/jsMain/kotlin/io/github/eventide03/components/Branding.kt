@@ -77,12 +77,12 @@ fun Branding() {
                     },
                 ) {
                     Text(
-                        "Our team's identity is inspired by the Greek myth of Icarus, symbolizing our ambition to soar to new heights while maintaining the wisdom to know our limits. Our primary colors are crimson (#D20041) and navy blue (#132034), representing passion and depth of knowledge respectively. The dark purple accent (#1A1423) adds sophistication to our brand. These colors were chosen not only for their visual impact but also for their psychological associations: red for energy and determination, blue for trust and intelligence, and purple for creativity and wisdom. Our logo features stylized wings that form an abstract 'I' shape, embodying our commitment to innovation while honoring our namesake. This branding extends across our robot, team uniforms, pit display, and all communications to create a cohesive and memorable identity in competition.",
+                        "Our team's identity is inspired by the 2012 Hip Hop album \"Good Kid, M.A.A.D City\", by Kendrick Lamar. The album itself represents change and evolution containing themes of spreading positivity in a world that can be negative at times. Our primary colors are Cardinal (#D20041) and navy blue (#132034), colors that the team collectively decided would theme well with our vibe. For accents, we use dark purple (#1A1423), and Champagne (#F5E5CC) for paragraphical text. Our logo uses these colors as well, made specifially to appear well, while maintaining a professional presence. This branding extends across our robot, future merchendise, pit display, and communications, creating a cohesive and memorable identity in competition.",
                     )
                 }
                 Link(
-                    path = "#",
-                    text = "Styling Guide",
+                    path = "https://coolors.co/palette/1a1423-372549-86bbd8-f5e5cc-d20041",
+                    text = "Color Palette",
                     modifier =
                         Modifier
                             .styleModifier {

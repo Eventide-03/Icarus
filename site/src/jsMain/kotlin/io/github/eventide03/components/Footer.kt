@@ -5,7 +5,6 @@ import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
-import com.varabyte.kobweb.silk.components.navigation.Link
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
@@ -178,80 +177,65 @@ fun Footer() {
                         gap(80.px)
                     },
             ) {
-                FooterColumn(title = "Team", items = listOf("About us", "Members", "Mentors", "Join us", "Sponsors"))
-                FooterColumn(title = "Competition", items = listOf("RIVAL Robotics", "Events", "Resources", "Rules", "YouTube"))
+                FooterColumn(
+                    title = "Team",
+                    items =
+                        listOf(
+                            "Financials" to
+                                "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/transactions?action=ledger&controller=events&event_id=m-a-a-d-bots-rival-team",
+                            "Donate" to "https://hcb.hackclub.com/donations/start/m-a-a-d-bots-rival-team",
+                            "Join us" to "#", // Placeholder link
+                            "Sponsors" to "#sponsors", // Updated to link to sponsors section specifically
+                        ),
+                )
+                FooterColumn(
+                    title = "Competition",
+                    items =
+                        listOf(
+                            "RIVAL Robotics" to "https://rivalrobotics.co/",
+                            "Events" to "https://lu.ma/RIVAL",
+                            "Rules" to "https://rivalrobotics.notion.site/doomsday",
+                            "YouTube" to "https://www.youtube.com/@rival_robotics",
+                        ),
+                )
             }
 
-            // Right Section - Join our robotics newsletter
-            Column {
+            // Right Section - Replace with Quote
+            Column(
+                modifier =
+                    Modifier.styleModifier {
+                        padding(8.px)
+                        display(DisplayStyle.Flex)
+                        flexDirection(FlexDirection.Column)
+                        justifyContent(JustifyContent.Center)
+                        alignItems(AlignItems.Center)
+                        textAlign("center")
+                    },
+            ) {
                 Div(
                     attrs = {
                         style {
                             color(Color("#FFFFFF"))
-                            fontSize(16.px)
-                            fontWeight(600)
-                            marginBottom(0.px)
+                            fontSize(24.px)
+                            fontWeight(400)
+                            fontStyle("italic")
+                            marginTop(16.px)
+                            marginBottom(8.px)
+                            maxWidth(300.px)
                         }
                     },
                 ) {
-                    Text("Join our robotics newsletter")
+                    Text("\"Even a small lighter can burn a bridge.\"")
                 }
-                P(
+                Div(
                     attrs = {
                         style {
                             color(Color("#8C97A7"))
-                            fontSize(14.px)
-                            marginBottom(12.px)
+                            fontSize(16.px)
                         }
                     },
                 ) {
-                    Text("Get updates on team events, competitions, and our progress.")
-                }
-                Row(
-                    modifier =
-                        Modifier.styleModifier {
-                            gap(8.px)
-                            alignItems(AlignItems.Center)
-                        },
-                ) {
-                    // Replace Input with Div + TextInput
-                    Div(
-                        attrs = {
-                            style {
-                                position(Position.Relative)
-                            }
-                        },
-                    ) {
-                        TextInput(
-                            attrs = {
-                                attr("placeholder", "Your email address")
-                                style {
-                                    padding(10.px, 16.px)
-                                    borderRadius(8.px)
-                                    border(1.px, LineStyle.Solid, Color("#8C97A7"))
-                                    backgroundColor(Color.transparent)
-                                    color(Color("#FFFFFF"))
-                                    fontSize(14.px)
-                                }
-                            },
-                        )
-                    }
-                    Link(
-                        path = "#",
-                        text = "Subscribe",
-                        modifier =
-                            Modifier
-                                .styleModifier {
-                                    display(DisplayStyle.InlineBlock)
-                                    backgroundColor(Color("#D20041"))
-                                    color(Color("#FFFFFF"))
-                                    padding(10.px, 16.px)
-                                    borderRadius(8.px)
-                                    fontSize(14.px)
-                                    border(0.px)
-                                    cursor("pointer")
-                                }.classNames("top-bar-action"),
-                    )
+                    Text("- Kendrick Lamar")
                 }
             }
         }
@@ -261,7 +245,7 @@ fun Footer() {
 @Composable
 fun FooterColumn(
     title: String,
-    items: List<String>,
+    items: List<Pair<String, String>>, // Changed from List<String> to List<Pair<String, String>> for (text, url)
 ) {
     Column {
         Div(
@@ -276,17 +260,23 @@ fun FooterColumn(
         ) {
             Text(title)
         }
-        items.forEach { item ->
-            Div(
+        items.forEach { (text, url) ->
+            A(
                 attrs = {
+                    attr("href", url)
                     style {
                         color(Color("#8C97A7"))
                         fontSize(14.px)
                         marginBottom(8.px)
+                        display(DisplayStyle.Block)
+                        textDecoration("none")
                     }
+                    // Add hover styles
+                    attr("onmouseover", "this.style.textDecoration='underline';")
+                    attr("onmouseout", "this.style.textDecoration='none';")
                 },
             ) {
-                Text(item)
+                Text(text)
             }
         }
     }

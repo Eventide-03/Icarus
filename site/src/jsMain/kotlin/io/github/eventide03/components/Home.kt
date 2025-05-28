@@ -105,7 +105,7 @@ fun Home() {
 
                 Link(
                     path = "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/donations",
-                    text = "Donate",
+                    text = "Contribute",
                     modifier =
                         Modifier
                             .styleModifier {
@@ -117,7 +117,7 @@ fun Home() {
                                 fontStyle("normal")
                                 fontWeight(500)
                                 lineHeight(24.px)
-                                padding(14.px, 32.px)
+                                padding(14.px, 26.px)
                                 borderRadius(6.px)
                                 backgroundColor(Color("#D20041"))
                                 marginTop(32.px)

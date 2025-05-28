@@ -20,6 +20,34 @@ enum class TeamType {
     SOFTWARE,
 }
 
+// Add mapping of team members to their subteams and quotes
+val teamMemberInfo =
+    mapOf(
+        "Rishi Mishra" to Pair(TeamType.SOFTWARE, "\"And so begins something new.\""),
+        "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"Let's build!\""),
+        "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"Learning is cool.\""),
+        "Sourish Mehta" to Pair(TeamType.SYSTEMS, "\"Everything has a purpose.\""),
+        "Ria Mishra" to Pair(TeamType.SOFTWARE, "\"Debugging is annoying.\""),
+        "May Hunh" to Pair(TeamType.MECHANICAL, "\"HI :D\""),
+        "Sam" to Pair(TeamType.SYSTEMS, "\"I'm Sam.\""),
+        "Om Gupta" to Pair(TeamType.SOFTWARE, "\"COMMIT YOUR CODE.\""),
+    )
+
+// Map TeamType to display names
+val teamTypeNames =
+    mapOf(
+        TeamType.SOFTWARE to "Software",
+        TeamType.SYSTEMS to "Systems",
+        TeamType.MECHANICAL to "Mechanical",
+    )
+
+// Special role overrides for specific team members
+val specialRoles =
+    mapOf(
+        "Rishi Mishra" to "Team Captain",
+        "Sam" to "Sam",
+    )
+
 @Composable
 fun Team() {
     // Add state to track which team is currently selected
@@ -169,7 +197,6 @@ fun Team() {
                             display(DisplayStyle.Flex)
                             flexDirection(FlexDirection.Column)
                             alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
-                            gap(32.px)
                         },
             ) {
                 Row(
@@ -256,6 +283,80 @@ fun Team() {
                     )
                 }
             }
+
+            // Add sponsors section
+            Column(
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .id("sponsors") // Add ID for direct linking
+                        .styleModifier {
+                            display(DisplayStyle.Flex)
+                            flexDirection(FlexDirection.Column)
+                            alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+                            gap(24.px)
+                            marginTop(60.px) // Add space between team and sponsors
+                            scrollMarginTop(104.px) // Increased from 84px to 104px to go 20px higher
+                        },
+            ) {
+                // Sponsors heading
+                H2(
+                    attrs = {
+                        style {
+                            color(Color("#FFFFFF"))
+                            fontSize(36.px)
+                            fontWeight(600)
+                            margin(0.px) // Remove default margin
+                        }
+                    },
+                ) {
+                    Text("Sponsors")
+                }
+
+                Div(
+                    attrs = {
+                        style {
+                            color(Color("#F5E5CC"))
+                            fontSize(18.px)
+                            fontStyle("italic")
+                            textAlign("center")
+                            marginBottom(20.px)
+                        }
+                    },
+                ) {
+                    Text("No current sponsors, contact us at Rishi.Mishra@OARobotics.org for inquiries and information!")
+                }
+
+                // Sponsor image placeholders
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(40.px)
+                            },
+                ) {
+                    // Three sponsor placeholders
+                    repeat(3) {
+                        Div(
+                            attrs = {
+                                style {
+                                    width(200.px)
+                                    height(100.px)
+                                    borderRadius(8.px)
+                                    backgroundColor(rgba(255, 255, 255, 0.1))
+                                    border(1.px, LineStyle.Dashed, rgba(255, 255, 255, 0.3))
+                                    display(DisplayStyle.Flex)
+                                    justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                    alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+                                }
+                            },
+                        )
+                    }
+                }
+            }
         }
     }
 }
@@ -303,6 +404,14 @@ fun TeamMemberCard(
     name: String,
     isHighlighted: Boolean = false,
 ) {
+    // Add click/hover state
+    var isShowingDetails by remember { mutableStateOf(false) }
+
+    // Get team info for this member
+    val teamInfo = teamMemberInfo[name]
+    val subteam = teamInfo?.first ?: TeamType.NONE
+    val quote = teamInfo?.second ?: ""
+
     Column(
         modifier =
             Modifier.styleModifier {
@@ -320,51 +429,137 @@ fun TeamMemberCard(
                     padding(11.px) // Add same padding to prevent layout shift
                     property("transition", "all 0.3s ease")
                 }
+                // Make column a relative container for absolute positioning
+                position(Position.Relative)
             },
     ) {
-        // Add an onError handler to show a fallback image if the original fails to load
-        Img(
-            src = imageUrl,
+        // Image container - Make it clickable
+        Div(
             attrs = {
-                attr("alt", name)
-                // Print the actual URL to console for debugging
-                attr(
-                    "onload",
-                    "console.log('Successfully loaded: ' + this.src);",
-                )
-                // Improved error handler for case sensitivity issues
-                attr(
-                    "onerror",
-                    """
-                    console.error('Failed to load: ' + this.src);
-                    
-                    // Try alternative case for Eddy specifically
-                    if (this.src.includes('eddy.png')) {
-                        this.src = 'https://placehold.co/300x300/1e3a5f/FFFFFF?text=Eddy';
-                    } else if (this.src.includes('Eddy.png')) {
-                        this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
-                    } else if (this.src.includes('May.png')) {
-                        this.src = 'https://eventide-03.github.io/Icarus/assets/may.png';
-                    } else if (this.src.includes('Sam.png')) {
-                        this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
-                    } else if (this.src.includes('Om.png')) {
-                        this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
-                    } else {
-                        this.style.backgroundColor = '#D20041';
-                    }
-                    """.trimIndent(),
-                )
                 style {
-                    width(300.px)
-                    height(300.px)
-                    borderRadius(8.px)
-                    objectFit(ObjectFit.Cover)
-                    // Add a background color so we can see the element even if image fails
-                    backgroundColor(Color("#1e3a5f"))
+                    position(Position.Relative)
+                    cursor("pointer") // Add cursor pointer to indicate it's clickable
+                    // Fix to ensure no gap between image and overlay
+                    display(DisplayStyle.Block)
+                    lineHeight("0") // Remove any line height that might cause spacing
                 }
+                // Add click handler to toggle details
+                onClick { isShowingDetails = !isShowingDetails }
             },
-        )
+        ) {
+            // Add an onError handler to show a fallback image if the original fails to load
+            Img(
+                src = imageUrl,
+                attrs = {
+                    attr("alt", name)
+                    // Print the actual URL to console for debugging
+                    attr(
+                        "onload",
+                        "console.log('Successfully loaded: ' + this.src);",
+                    )
+                    // Improved error handler for case sensitivity issues
+                    attr(
+                        "onerror",
+                        """
+                        console.error('Failed to load: ' + this.src);
+                        
+                        // Try alternative case for Eddy specifically
+                        if (this.src.includes('eddy.png')) {
+                            this.src = 'https://placehold.co/300x300/1e3a5f/FFFFFF?text=Eddy';
+                        } else if (this.src.includes('Eddy.png')) {
+                            this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
+                        } else if (this.src.includes('May.png')) {
+                            this.src = 'https://eventide-03.github.io/Icarus/assets/may.png';
+                        } else if (this.src.includes('Sam.png')) {
+                            this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
+                        } else if (this.src.includes('Om.png')) {
+                            this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
+                        } else {
+                            this.style.backgroundColor = '#D20041';
+                        }
+                        """.trimIndent(),
+                    )
+                    style {
+                        width(300.px)
+                        height(300.px)
+                        borderRadius(8.px)
+                        objectFit(ObjectFit.Cover)
+                        // Add a background color so we can see the element even if image fails
+                        backgroundColor(Color("#1e3a5f"))
+                        // Add transition for smooth hover effect
+                        property("transition", "filter 0.3s ease")
+                        // Darken the image when details are shown
+                        if (isShowingDetails) {
+                            property("filter", "brightness(0.7)")
+                        }
+                        // Ensure image has display block to avoid spacing issues
+                        display(DisplayStyle.Block)
+                    }
+                },
+            )
+
+            // Overlay with subteam and quote that appears when details are shown
+            if (isShowingDetails) {
+                Div(
+                    attrs = {
+                        style {
+                            position(Position.Absolute)
+                            top(0.px)
+                            left(0.px)
+                            right(0.px) // Ensure full width coverage
+                            bottom(0.px) // Ensure full height coverage
+                            borderRadius(8.px) // Match the image border radius
+                            backgroundColor(rgba(0, 0, 0, 0.7))
+                            display(DisplayStyle.Flex)
+                            flexDirection(FlexDirection.Column)
+                            justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                            alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
+                            // Removed explicit width/height in favor of position sides
+                            // Removed padding to prevent overflow
+                            textAlign("center")
+                            // Add animation for smooth appearance
+                            property("animation", "fadeIn 0.3s ease-in-out")
+                            // Prevent any possible overflow
+                            overflow(Overflow.Hidden)
+                        }
+                    },
+                ) {
+                    // Subteam display - Use special role if available, otherwise use team type
+                    Div(
+                        attrs = {
+                            style {
+                                color(Color("#D20041"))
+                                fontSize(24.px)
+                                fontWeight(600)
+                                marginBottom(8.px)
+                                padding(0.px, 16.px) // Horizontal padding only
+                            }
+                        },
+                    ) {
+                        // Check if this person has a special role, otherwise use their team
+                        Text(specialRoles[name] ?: teamTypeNames[subteam] ?: "Team Member")
+                    }
+
+                    // Quote display
+                    Div(
+                        attrs = {
+                            style {
+                                color(Color("#FFFFFF"))
+                                fontSize(18.px)
+                                fontStyle("italic")
+                                lineHeight("1.5")
+                                padding(0.px, 16.px) // Horizontal padding only
+                            }
+                        },
+                    ) {
+                        Text(quote)
+                    }
+                }
+            }
+        }
+
         if (name.isNotEmpty()) {
+            // Keep the name clickable as well
             Div(
                 attrs = {
                     style {
@@ -373,7 +568,9 @@ fun TeamMemberCard(
                         fontWeight(600)
                         textAlign("center")
                         property("transition", "color 0.3s ease")
+                        cursor("pointer") // Add cursor pointer to indicate clickable
                     }
+                    onClick { isShowingDetails = !isShowingDetails }
                 },
             ) {
                 Text(name)
@@ -381,4 +578,3 @@ fun TeamMemberCard(
         }
     }
 }
-// TODO: people descriptions either below or hover over image

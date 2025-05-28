@@ -190,7 +190,6 @@ fun Proposal() {
                         style {
                             display(DisplayStyle.Flex)
                             flexDirection(FlexDirection.Column)
-                            gap(16.px)
                             marginTop(0.px)
                             marginBottom(20.px)
                             maxWidth(100.percent) // Ensure it doesn't go off page
@@ -206,12 +205,38 @@ fun Proposal() {
                                 fontSize(16.px)
                                 lineHeight(24.px)
                                 marginTop(0.px)
-                                marginBottom(10.px)
                                 alignSelf("flex-start") // Keep the title left-aligned
                             }
                         },
                     ) {
-                        Text("Project Gallery")
+                        Text(
+                            "The following are images displaying our progress in the construcion of our robot, we have a design and sketch ready, and are beginning the stages of CAD and prototyping.",
+                        )
+                    }
+
+                    A(
+                        attrs = {
+                            attr(
+                                "href",
+                                "https://cad.onshape.com/documents/738b0ef599ad6d1b3f9144dc/w/9de922e16be162971d5a6925/e/a80f18b0354e97110a607147?renderMode=0&uiState=6836e87ae4f832298a9fc2dd",
+                            )
+                            attr("target", "_blank")
+                            style {
+                                color(Color("#F5E5CC"))
+                                fontSize(17.px)
+                                fontWeight(700)
+                                textDecoration("none")
+                                marginTop(0.px)
+                                marginBottom(32.px)
+                                alignSelf("flex-start") // Keep the link left-aligned
+                                display(DisplayStyle.Block)
+                            }
+                            // Add hover effect
+                            attr("onmouseover", "this.style.textDecoration='underline';")
+                            attr("onmouseout", "this.style.textDecoration='none';")
+                        },
+                    ) {
+                        Text("CAD Link")
                     }
 
                     // Gallery with navigation buttons
@@ -336,7 +361,7 @@ fun Proposal() {
                                 )
 
                                 Img(
-                                    src = "/assets/madTesting.png",
+                                    src = "https://eventide-03.github.io/Icarus/assets/cad.png",
                                     attrs = {
                                         style {
                                             height(300.px)
@@ -355,13 +380,13 @@ fun Proposal() {
                                         }
                                         // Add onClick handler to show fullscreen
                                         onClick {
-                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/cad.png"
                                             isFullscreenActive = true
                                         }
                                     },
                                 )
                                 Img(
-                                    src = "/assets/madTesting.png",
+                                    src = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
                                     attrs = {
                                         style {
                                             height(300.px)
@@ -378,13 +403,13 @@ fun Proposal() {
                                             cursor("pointer")
                                         }
                                         onClick {
-                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png"
                                             isFullscreenActive = true
                                         }
                                     },
                                 )
                                 Img(
-                                    src = "/assets/madTesting.png",
+                                    src = "https://eventide-03.github.io/Icarus/assets/sketch.png",
                                     attrs = {
                                         style {
                                             height(300.px)
@@ -401,13 +426,13 @@ fun Proposal() {
                                             cursor("pointer")
                                         }
                                         onClick {
-                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/sketch.png"
                                             isFullscreenActive = true
                                         }
                                     },
                                 )
                                 Img(
-                                    src = "/assets/madTesting.png",
+                                    src = "https://eventide-03.github.io/Icarus/assets/basicsketch.png",
                                     attrs = {
                                         style {
                                             height(300.px)
@@ -424,13 +449,13 @@ fun Proposal() {
                                             cursor("pointer")
                                         }
                                         onClick {
-                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/basicsketch.png"
                                             isFullscreenActive = true
                                         }
                                     },
                                 )
                                 Img(
-                                    src = "/assets/madTesting.png",
+                                    src = "https://eventide-03.github.io/Icarus/assets/recap.png",
                                     attrs = {
                                         style {
                                             height(300.px)
@@ -446,7 +471,7 @@ fun Proposal() {
                                             cursor("pointer")
                                         }
                                         onClick {
-                                            fullscreenImageSrc = "/assets/madTesting.png"
+                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/recap.png"
                                             isFullscreenActive = true
                                         }
                                     },
