@@ -25,7 +25,7 @@ val teamMemberInfo =
     mapOf(
         "Rishi Mishra" to Pair(TeamType.SOFTWARE, "\"And so begins something new.\""),
         "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"Let's build!\""),
-        "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"Learning is cool.\""),
+        "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"If I only live once, then might as well do things I’ll remember forever.\""),
         "Sourish Mehta" to Pair(TeamType.SYSTEMS, "\"Everything has a purpose.\""),
         "Ria Mishra" to Pair(TeamType.SOFTWARE, "\"Debugging is annoying.\""),
         "May Hunh" to Pair(TeamType.MECHANICAL, "\"HI :D\""),
