@@ -122,7 +122,9 @@ fun Team() {
                         }
                     },
                 ) {
-                    Text("Divided into three unique subteams based on expertise and experience")
+                    Text(
+                        "Divided into three unique subteams based on expertise and experience, if you are interested in joining, don't be afraid to email us for an application at RishiMishraOA@gmail.com, we would love to meet you!",
+                    )
                 }
                 Row(
                     modifier =
