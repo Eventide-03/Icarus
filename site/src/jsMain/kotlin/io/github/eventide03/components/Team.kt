@@ -32,8 +32,8 @@ val teamMemberInfo =
         "Sam" to Pair(TeamType.SYSTEMS, "\"I'm Sam.\""),
         "Om Gupta" to Pair(TeamType.SOFTWARE, "\"COMMIT YOUR CODE.\""),
         // Added Shawn and Abigail
-        "Shawn" to Pair(TeamType.SOFTWARE, "\"We may live in a gothic dystopian society.\""),
-        "Abigail" to Pair(TeamType.SYSTEMS, "\"Little by little, one travels far.\""),
+        "Shawn Gazin" to Pair(TeamType.SOFTWARE, "\"We may live in a gothic dystopian society.\""),
+        "Abigail Phan" to Pair(TeamType.SYSTEMS, "\"Little by little, one travels far.\""),
     )
 
 // Add Brandon Chiem to the team info map
@@ -299,7 +299,6 @@ fun Team() {
                         selectedTeam == TeamType.MECHANICAL,
                     )
                 }
-                // Add a new row for Shawn and Abigail
                 Row(
                     modifier =
                         Modifier
@@ -313,12 +312,12 @@ fun Team() {
                 ) {
                     TeamMemberCard(
                         "https://eventide-03.github.io/Icarus/assets/shawn.png",
-                        "Shawn",
+                        "Shawn Gazin",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     TeamMemberCard(
                         "https://eventide-03.github.io/Icarus/assets/abigail.png",
-                        "Abigail",
+                        "Abigail Phan",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                 }
