@@ -24,14 +24,21 @@ enum class TeamType {
 val teamMemberInfo =
     mapOf(
         "Rishi Mishra" to Pair(TeamType.SOFTWARE, "\"And so begins something new.\""),
-        "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"Let's build!\""),
-        "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"If I only live once, then might as well do things I’ll remember forever.\""),
+        "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"Me when robor?\""),
+        "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"If I only live once, then I might as well do things I will remember forever.\""),
         "Sourish Mehta" to Pair(TeamType.SYSTEMS, "\"Everything has a purpose.\""),
         "Ria Mishra" to Pair(TeamType.SOFTWARE, "\"Debugging is annoying.\""),
-        "May Hunh" to Pair(TeamType.MECHANICAL, "\"HI :D\""),
+        "May Huynh" to Pair(TeamType.MECHANICAL, "\"HI :D\""),
         "Sam" to Pair(TeamType.SYSTEMS, "\"I'm Sam.\""),
         "Om Gupta" to Pair(TeamType.SOFTWARE, "\"COMMIT YOUR CODE.\""),
     )
+
+// Add Brandon Chiem to the team info map
+val extendedTeamMemberInfo =
+    teamMemberInfo +
+        mapOf(
+            "Brandon Chiem" to Pair(TeamType.MECHANICAL, "\"I learn fast because I have more time to listen.\""),
+        )
 
 // Map TeamType to display names
 val teamTypeNames =
@@ -52,6 +59,8 @@ val specialRoles =
 fun Team() {
     // Add state to track which team is currently selected
     var selectedTeam by remember { mutableStateOf(TeamType.NONE) }
+    // State for showing more team members
+    var showMore by remember { mutableStateOf(false) }
 
     Box(
         modifier =
@@ -245,17 +254,16 @@ fun Team() {
                         "Sourish Mehta",
                         selectedTeam == TeamType.SYSTEMS,
                     )
-                    // Software team: Rishi, Ria, Om
+                    // SWAPPED: May and Ria positions
+                    TeamMemberCard(
+                        "https://eventide-03.github.io/Icarus/assets/may.png",
+                        "May Huynh",
+                        selectedTeam == TeamType.MECHANICAL,
+                    )
                     TeamMemberCard(
                         "https://eventide-03.github.io/Icarus/assets/ria.png",
                         "Ria Mishra",
                         selectedTeam == TeamType.SOFTWARE,
-                    )
-                    // Mechanical team: Eddy, May
-                    TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/may.png",
-                        "May Hunh",
-                        selectedTeam == TeamType.MECHANICAL,
                     )
                 }
                 Row(
@@ -269,17 +277,21 @@ fun Team() {
                                 marginTop(24.px)
                             },
                 ) {
-                    // Systems team: Ridam, Sourish, Sam
+                    // SWAPPED: Om and Sam positions
+                    TeamMemberCard(
+                        "https://eventide-03.github.io/Icarus/assets/om.png",
+                        "Om Gupta",
+                        selectedTeam == TeamType.SOFTWARE,
+                    )
                     TeamMemberCard(
                         "https://eventide-03.github.io/Icarus/assets/sam.png",
                         "Sam",
                         selectedTeam == TeamType.SYSTEMS,
                     )
-                    // Software team: Rishi, Ria, Om
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/om.png",
-                        "Om Gupta",
-                        selectedTeam == TeamType.SOFTWARE,
+                        "https://eventide-03.github.io/Icarus/assets/brandon.png",
+                        "Brandon Chiem",
+                        selectedTeam == TeamType.MECHANICAL,
                     )
                 }
             }
@@ -324,7 +336,7 @@ fun Team() {
                         }
                     },
                 ) {
-                    Text("No current sponsors, contact us at Rishi.Mishra@OARobotics.org for inquiries and information!")
+                    Text("No current sponsors, contact us at RishiMishraOA@gmail.com for inquiries and information!")
                 }
 
                 // Sponsor image placeholders
@@ -406,9 +418,10 @@ fun TeamMemberCard(
 ) {
     // Add click/hover state
     var isShowingDetails by remember { mutableStateOf(false) }
+    var isHovered by remember { mutableStateOf(false) }
 
     // Get team info for this member
-    val teamInfo = teamMemberInfo[name]
+    val teamInfo = extendedTeamMemberInfo[name]
     val subteam = teamInfo?.first ?: TeamType.NONE
     val quote = teamInfo?.second ?: ""
 
@@ -439,12 +452,13 @@ fun TeamMemberCard(
                 style {
                     position(Position.Relative)
                     cursor("pointer") // Add cursor pointer to indicate it's clickable
-                    // Fix to ensure no gap between image and overlay
                     display(DisplayStyle.Block)
                     lineHeight("0") // Remove any line height that might cause spacing
                 }
                 // Add click handler to toggle details
                 onClick { isShowingDetails = !isShowingDetails }
+                onMouseOver { isHovered = true }
+                onMouseOut { isHovered = false }
             },
         ) {
             // Add an onError handler to show a fallback image if the original fails to load
@@ -484,15 +498,14 @@ fun TeamMemberCard(
                         height(300.px)
                         borderRadius(8.px)
                         objectFit(ObjectFit.Cover)
-                        // Add a background color so we can see the element even if image fails
                         backgroundColor(Color("#1e3a5f"))
-                        // Add transition for smooth hover effect
-                        property("transition", "filter 0.3s ease")
-                        // Darken the image when details are shown
+                        property("transition", "filter 0.3s ease, transform 0.3s ease")
+                        // Only darken the image when details are shown and NOT on hover
                         if (isShowingDetails) {
                             property("filter", "brightness(0.7)")
+                        } else if (isHovered) {
+                            property("transform", "scale(1.03)")
                         }
-                        // Ensure image has display block to avoid spacing issues
                         display(DisplayStyle.Block)
                     }
                 },
@@ -506,20 +519,16 @@ fun TeamMemberCard(
                             position(Position.Absolute)
                             top(0.px)
                             left(0.px)
-                            right(0.px) // Ensure full width coverage
-                            bottom(0.px) // Ensure full height coverage
-                            borderRadius(8.px) // Match the image border radius
+                            right(0.px)
+                            bottom(0.px)
+                            borderRadius(8.px)
                             backgroundColor(rgba(0, 0, 0, 0.7))
                             display(DisplayStyle.Flex)
                             flexDirection(FlexDirection.Column)
                             justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
                             alignItems(org.jetbrains.compose.web.css.AlignItems.Center)
-                            // Removed explicit width/height in favor of position sides
-                            // Removed padding to prevent overflow
                             textAlign("center")
-                            // Add animation for smooth appearance
                             property("animation", "fadeIn 0.3s ease-in-out")
-                            // Prevent any possible overflow
                             overflow(Overflow.Hidden)
                         }
                     },
@@ -531,12 +540,11 @@ fun TeamMemberCard(
                                 color(Color("#D20041"))
                                 fontSize(24.px)
                                 fontWeight(600)
-                                marginBottom(8.px)
-                                padding(0.px, 16.px) // Horizontal padding only
+                                marginBottom(8.px) // <-- Set margin between subteam and quote to 8px
+                                padding(0.px, 16.px)
                             }
                         },
                     ) {
-                        // Check if this person has a special role, otherwise use their team
                         Text(specialRoles[name] ?: teamTypeNames[subteam] ?: "Team Member")
                     }
 
@@ -548,7 +556,7 @@ fun TeamMemberCard(
                                 fontSize(18.px)
                                 fontStyle("italic")
                                 lineHeight("1.5")
-                                padding(0.px, 16.px) // Horizontal padding only
+                                padding(0.px, 16.px)
                             }
                         },
                     ) {

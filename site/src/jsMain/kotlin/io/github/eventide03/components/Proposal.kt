@@ -15,9 +15,19 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun Proposal() {
+    // Gallery image sources
+    val galleryImages =
+        listOf(
+            "https://eventide-03.github.io/Icarus/assets/cad.png",
+            "https://eventide-03.github.io/Icarus/assets/sketch.png",
+            "https://eventide-03.github.io/Icarus/assets/basicsketch.png",
+            "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
+            "https://eventide-03.github.io/Icarus/assets/recap.png",
+        )
+
     // State for fullscreen image
     var isFullscreenActive by remember { mutableStateOf(false) }
-    var fullscreenImageSrc by remember { mutableStateOf("") }
+    var fullscreenImageIndex by remember { mutableStateOf(0) }
 
     // Fullscreen overlay component
     if (isFullscreenActive) {
@@ -29,8 +39,8 @@ fun Proposal() {
                     left(0.px)
                     width(100.percent)
                     height(100.percent)
-                    backgroundColor(rgba(0, 0, 0, 0.9))
-                    property("z-index", "1000") // Fixed: replaced zIndex(1000) with property
+                    backgroundColor(rgba(0, 0, 0, 0.55)) // Less opaque so you can see the site
+                    property("z-index", "1000")
                     display(DisplayStyle.Flex)
                     justifyContent(JustifyContent.Center)
                     alignItems(AlignItems.Center)
@@ -41,18 +51,76 @@ fun Proposal() {
                 }
             },
         ) {
+            // Left arrow
+            if (galleryImages.size > 1) {
+                Button(
+                    attrs = {
+                        style {
+                            position(Position.Absolute)
+                            left(40.px)
+                            top(50.percent)
+                            backgroundColor(rgba(0, 0, 0, 0.4))
+                            color(Color.white)
+                            border(0.px)
+                            borderRadius(24.px)
+                            padding(12.px)
+                            fontSize(32.px)
+                            cursor("pointer")
+                            opacity(0.7)
+                            property("z-index", "1001")
+                        }
+                        onClick {
+                            // Prevent overlay close
+                            it.stopPropagation()
+                            fullscreenImageIndex = if (fullscreenImageIndex == 0) galleryImages.lastIndex else fullscreenImageIndex - 1
+                        }
+                    },
+                ) { Text("←") }
+            }
+
             Img(
-                src = fullscreenImageSrc,
+                src = galleryImages[fullscreenImageIndex],
                 attrs = {
                     style {
-                        maxWidth(90.percent)
-                        maxHeight(90.percent)
+                        maxWidth(1200.px)
+                        maxHeight(700.px)
+                        width(90.percent)
+                        height(90.percent)
                         property("object-fit", "contain")
+                        borderRadius(12.px)
+                        backgroundColor(Color("#222"))
+                        display(DisplayStyle.Block)
                     }
                     // Stop propagation to prevent closing when clicking on the image itself
                     onClick { it.stopPropagation() }
                 },
             )
+
+            // Right arrow
+            if (galleryImages.size > 1) {
+                Button(
+                    attrs = {
+                        style {
+                            position(Position.Absolute)
+                            right(40.px)
+                            top(50.percent)
+                            backgroundColor(rgba(0, 0, 0, 0.4))
+                            color(Color.white)
+                            border(0.px)
+                            borderRadius(24.px)
+                            padding(12.px)
+                            fontSize(32.px)
+                            cursor("pointer")
+                            opacity(0.7)
+                            property("z-index", "1001")
+                        }
+                        onClick {
+                            it.stopPropagation()
+                            fullscreenImageIndex = if (fullscreenImageIndex == galleryImages.lastIndex) 0 else fullscreenImageIndex + 1
+                        }
+                    },
+                ) { Text("→") }
+            }
         }
     }
 
@@ -146,7 +214,7 @@ fun Proposal() {
         Div(
             attrs = {
                 style {
-                    height(30.px) // Add space between rows
+                    height(30.px)
                 }
             },
         )
@@ -360,122 +428,34 @@ fun Proposal() {
                                     },
                                 )
 
-                                Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/cad.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            marginRight(16.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            // Add cursor pointer to indicate clickability
-                                            cursor("pointer")
-                                        }
-                                        // Add onClick handler to show fullscreen
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/cad.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
-                                Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/sketch.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            marginRight(16.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            cursor("pointer")
-                                        }
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/sketch.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
-                                Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/basicsketch.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            marginRight(16.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            cursor("pointer")
-                                        }
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/basicsketch.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
-                                Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            marginRight(16.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            cursor("pointer")
-                                        }
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/abigailsketch.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
-                                Img(
-                                    src = "https://eventide-03.github.io/Icarus/assets/recap.png",
-                                    attrs = {
-                                        style {
-                                            height(300.px)
-                                            width(350.px)
-                                            minWidth(350.px)
-                                            property("object-fit", "cover")
-                                            borderRadius(8.px)
-                                            // Ensure image doesn't expand outside container
-                                            property("flex-shrink", "0")
-                                            marginBottom(0.px)
-                                            // Add scroll snap align
-                                            property("scroll-snap-align", "center")
-                                            cursor("pointer")
-                                        }
-                                        onClick {
-                                            fullscreenImageSrc = "https://eventide-03.github.io/Icarus/assets/recap.png"
-                                            isFullscreenActive = true
-                                        }
-                                    },
-                                )
+                                // Use galleryImages for the gallery
+                                galleryImages.forEachIndexed { idx, src ->
+                                    Img(
+                                        src = src,
+                                        attrs = {
+                                            style {
+                                                height(300.px)
+                                                width(350.px)
+                                                minWidth(350.px)
+                                                property("object-fit", "cover")
+                                                borderRadius(8.px)
+                                                // Ensure image doesn't expand outside container
+                                                property("flex-shrink", "0")
+                                                marginBottom(0.px)
+                                                marginRight(16.px)
+                                                // Add scroll snap align
+                                                property("scroll-snap-align", "center")
+                                                // Add cursor pointer to indicate clickability
+                                                cursor("pointer")
+                                            }
+                                            // Add onClick handler to show fullscreen
+                                            onClick {
+                                                fullscreenImageIndex = idx
+                                                isFullscreenActive = true
+                                            }
+                                        },
+                                    )
+                                }
 
                                 // Non-scrollable spacer at the end
                                 Div(

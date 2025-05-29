@@ -105,7 +105,7 @@ fun Home() {
 
                 Link(
                     path = "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/donations",
-                    text = "Contribute",
+                    text = "Donate",
                     modifier =
                         Modifier
                             .styleModifier {

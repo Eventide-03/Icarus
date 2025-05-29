@@ -35,7 +35,6 @@ fun TopBar() {
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
                         justifyContent(JustifyContent.Start)
-                        gap(120.px)
                     },
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start,
@@ -66,7 +65,7 @@ fun TopBar() {
                             classes("top-bar-logo")
                             style {
                                 height(40.px)
-                                marginLeft(85.px)
+                                marginLeft(50.px)
                             }
                         },
                     )
@@ -78,7 +77,8 @@ fun TopBar() {
                             fontSize(24.px)
                             fontWeight(700)
                             lineHeight(24.px)
-                            whiteSpace("nowrap") // Prevents wrapping to a new line
+                            whiteSpace("nowrap")
+                            marginRight(100.px)
                         }
                     },
                 ) {
@@ -105,6 +105,7 @@ fun TopBar() {
                         "Proposal" to "#proposal",
                         "Mission" to "#mission",
                         "Team" to "#team",
+                        "Sponsors" to "#sponsors",
                         "Branding" to "#branding",
                     )
 
@@ -131,7 +132,7 @@ fun TopBar() {
                         modifier =
                             Modifier.styleModifier {
                                 color(Color("#D20041"))
-                                marginLeft(65.px)
+                                marginLeft(50.px)
                                 fontSize(16.px)
                                 fontWeight(500)
                                 lineHeight(20.px)
@@ -144,10 +145,10 @@ fun TopBar() {
                     )
                     Link(
                         path = "https://hcb.hackclub.com/donations/start/m-a-a-d-bots-rival-team",
-                        text = "Join Us",
+                        text = "Contribute",
                         modifier =
                             Modifier.styleModifier {
-                                color(Color("#F5E5CC"))
+                                color(Color("#FFF"))
                                 fontSize(16.px)
                                 fontWeight(500)
                                 lineHeight(24.px)
@@ -162,4 +163,3 @@ fun TopBar() {
         }
     }
 }
-// TODO: BOM, for some reason the site works with a basepath rather than without and it might be because of the stuff I did in AppEntry.kt anyways fix site icon rishi
