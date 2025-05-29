@@ -31,6 +31,9 @@ val teamMemberInfo =
         "May Huynh" to Pair(TeamType.MECHANICAL, "\"HI :D\""),
         "Sam" to Pair(TeamType.SYSTEMS, "\"I'm Sam.\""),
         "Om Gupta" to Pair(TeamType.SOFTWARE, "\"COMMIT YOUR CODE.\""),
+        // Added Shawn and Abigail
+        "Shawn" to Pair(TeamType.SOFTWARE, "\"We may live in a gothic dystopian society.\""),
+        "Abigail" to Pair(TeamType.SYSTEMS, "\"Little by little, one travels far.\""),
     )
 
 // Add Brandon Chiem to the team info map
@@ -294,6 +297,29 @@ fun Team() {
                         "https://eventide-03.github.io/Icarus/assets/brandon.png",
                         "Brandon Chiem",
                         selectedTeam == TeamType.MECHANICAL,
+                    )
+                }
+                // Add a new row for Shawn and Abigail
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .styleModifier {
+                                display(DisplayStyle.Flex)
+                                justifyContent(org.jetbrains.compose.web.css.JustifyContent.Center)
+                                gap(24.px)
+                                marginTop(24.px)
+                            },
+                ) {
+                    TeamMemberCard(
+                        "https://eventide-03.github.io/Icarus/assets/shawn.png",
+                        "Shawn",
+                        selectedTeam == TeamType.SOFTWARE,
+                    )
+                    TeamMemberCard(
+                        "https://eventide-03.github.io/Icarus/assets/abigail.png",
+                        "Abigail",
+                        selectedTeam == TeamType.SYSTEMS,
                     )
                 }
             }
