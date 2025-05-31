@@ -39,7 +39,7 @@ fun Branding() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://eventide-03.github.io/Icarus/assets/madTesting.png",
+                src = "https://maadbots.malefic.xyz/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Team Image")
                     style {

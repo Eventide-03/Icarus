@@ -18,11 +18,11 @@ fun Proposal() {
     // Gallery image sources
     val galleryImages =
         listOf(
-            "https://eventide-03.github.io/Icarus/assets/cad.png",
-            "https://eventide-03.github.io/Icarus/assets/sketch.png",
-            "https://eventide-03.github.io/Icarus/assets/basicsketch.png",
-            "https://eventide-03.github.io/Icarus/assets/abigailsketch.png",
-            "https://eventide-03.github.io/Icarus/assets/recap.png",
+            "https://maadbots.malefic.xyz/assets/cad.png",
+            "https://maadbots.malefic.xyz/assets/sketch.png",
+            "https://maadbots.malefic.xyz/assets/basicsketch.png",
+            "https://maadbots.malefic.xyz/assets/abigailsketch.png",
+            "https://maadbots.malefic.xyz/assets/recap.png",
         )
 
     // State for fullscreen image
@@ -152,7 +152,7 @@ fun Proposal() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://eventide-03.github.io/Icarus/assets/Engineering_Process.png",
+                src = "https://maadbots.malefic.xyz/assets/Engineering_Process.png",
                 attrs = {
                     attr("alt", "Robot CAD Design")
                     style {

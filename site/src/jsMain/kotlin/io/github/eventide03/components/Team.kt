@@ -225,19 +225,19 @@ fun Team() {
                 ) {
                     // Software team: Rishi, Ria, Om
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/RishiDown.png",
+                        "https://maadbots.malefic.xyz/assets/RishiDown.png",
                         "Rishi Mishra",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     // Systems team: Ridam, Sourish, Sam
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/Ridam.png",
+                        "https://maadbots.malefic.xyz/assets/ridam.png",
                         "Ridam Bhatia",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                     // Mechanical team: Eddy, May
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/eddy.png",
+                        "https://maadbots.malefic.xyz/assets/eddy.png",
                         "Eddy Aguilar",
                         selectedTeam == TeamType.MECHANICAL,
                     )
@@ -255,18 +255,18 @@ fun Team() {
                 ) {
                     // Systems team: Ridam, Sourish, Sam
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/sourish.png",
+                        "https://maadbots.malefic.xyz/assets/sourish.png",
                         "Sourish Mehta",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                     // SWAPPED: May and Ria positions
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/may.png",
+                        "https://maadbots.malefic.xyz/assets/may.png",
                         "May Huynh",
                         selectedTeam == TeamType.MECHANICAL,
                     )
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/ria.png",
+                        "https://maadbots.malefic.xyz/assets/ria.png",
                         "Ria Mishra",
                         selectedTeam == TeamType.SOFTWARE,
                     )
@@ -284,17 +284,17 @@ fun Team() {
                 ) {
                     // SWAPPED: Om and Sam positions
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/om.png",
+                        "https://maadbots.malefic.xyz/assets/om.png",
                         "Om Gupta",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/sam.png",
+                        "https://maadbots.malefic.xyz/assets/sam.png",
                         "Sam",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/brandon.png",
+                        "https://maadbots.malefic.xyz/assets/brandon.png",
                         "Brandon Chiem",
                         selectedTeam == TeamType.MECHANICAL,
                     )
@@ -311,12 +311,12 @@ fun Team() {
                             },
                 ) {
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/shawn.png",
+                        "https://maadbots.malefic.xyz/assets/shawn.png",
                         "Shawn Gazin",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     TeamMemberCard(
-                        "https://eventide-03.github.io/Icarus/assets/abigail.png",
+                        "https://maadbots.malefic.xyz/assets/abigail.png",
                         "Abigail Phan",
                         selectedTeam == TeamType.SYSTEMS,
                     )
@@ -492,34 +492,7 @@ fun TeamMemberCard(
             Img(
                 src = imageUrl,
                 attrs = {
-                    attr("alt", name)
-                    // Print the actual URL to console for debugging
-                    attr(
-                        "onload",
-                        "console.log('Successfully loaded: ' + this.src);",
-                    )
                     // Improved error handler for case sensitivity issues
-                    attr(
-                        "onerror",
-                        """
-                        console.error('Failed to load: ' + this.src);
-                        
-                        // Try alternative case for Eddy specifically
-                        if (this.src.includes('eddy.png')) {
-                            this.src = 'https://placehold.co/300x300/1e3a5f/FFFFFF?text=Eddy';
-                        } else if (this.src.includes('Eddy.png')) {
-                            this.src = 'https://eventide-03.github.io/Icarus/assets/eddy.png';
-                        } else if (this.src.includes('May.png')) {
-                            this.src = 'https://eventide-03.github.io/Icarus/assets/may.png';
-                        } else if (this.src.includes('Sam.png')) {
-                            this.src = 'https://eventide-03.github.io/Icarus/assets/sam.png';
-                        } else if (this.src.includes('Om.png')) {
-                            this.src = 'https://eventide-03.github.io/Icarus/assets/om.png';
-                        } else {
-                            this.style.backgroundColor = '#D20041';
-                        }
-                        """.trimIndent(),
-                    )
                     style {
                         width(300.px)
                         height(300.px)

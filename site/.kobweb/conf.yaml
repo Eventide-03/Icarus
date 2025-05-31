@@ -1,7 +1,5 @@
 site:
   title: "M.A.A.D Bots"
-  basePath: "Icarus"
-
 
 server:
   files:

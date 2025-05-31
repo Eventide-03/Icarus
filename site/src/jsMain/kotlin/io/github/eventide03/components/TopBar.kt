@@ -59,7 +59,7 @@ fun TopBar() {
                         },
                 ) {
                     Img(
-                        src = "https://eventide-03.github.io/Icarus/assets/teamlogo.png",
+                        src = "https://maadbots.malefic.xyz/assets/teamlogo.png",
                         attrs = {
                             attr("alt", "Logo")
                             classes("top-bar-logo")
