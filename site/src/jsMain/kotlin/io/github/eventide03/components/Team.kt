@@ -231,7 +231,7 @@ fun Team() {
                     )
                     // Systems team: Ridam, Sourish, Sam
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/ridam.png",
+                        "https://maadbots.malefic.xyz/assets/Ridam.png",
                         "Ridam Bhatia",
                         selectedTeam == TeamType.SYSTEMS,
                     )
