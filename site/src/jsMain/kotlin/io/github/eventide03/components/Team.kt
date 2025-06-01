@@ -24,7 +24,7 @@ enum class TeamType {
 val teamMemberInfo =
     mapOf(
         "Rishi Mishra" to Pair(TeamType.SOFTWARE, "\"And so begins something new.\""),
-        "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"Me when robor?\""),
+        "Ridam Bhatia" to Pair(TeamType.SYSTEMS, "\"If you do it right the first time, you won't have to do it again.\""),
         "Eddy Aguilar" to Pair(TeamType.MECHANICAL, "\"If I only live once, then I might as well do things I will remember forever.\""),
         "Sourish Mehta" to Pair(TeamType.SYSTEMS, "\"Everything has a purpose.\""),
         "Ria Mishra" to Pair(TeamType.SOFTWARE, "\"Debugging is annoying.\""),
