@@ -39,7 +39,7 @@ fun Branding() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://maadbots.malefic.xyz/assets/madTesting.png",
+                src = "https://home.maadbots.org/assets/madTesting.png",
                 attrs = {
                     attr("alt", "Team Image")
                     style {

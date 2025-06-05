@@ -225,19 +225,19 @@ fun Team() {
                 ) {
                     // Software team: Rishi, Ria, Om
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/RishiDown.png",
+                        "https://home.maadbots.org/assets/RishiDown.png",
                         "Rishi Mishra",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     // Systems team: Ridam, Sourish, Sam
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/Ridam.png",
+                        "https://home.maadbots.org/assets/Ridam.png",
                         "Ridam Bhatia",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                     // Mechanical team: Eddy, May
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/eddy.png",
+                        "https://home.maadbots.org/assets/eddy.png",
                         "Eddy Aguilar",
                         selectedTeam == TeamType.MECHANICAL,
                     )
@@ -255,18 +255,17 @@ fun Team() {
                 ) {
                     // Systems team: Ridam, Sourish, Sam
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/sourish.png",
+                        "https://home.maadbots.org/assets/sourish.png",
                         "Sourish Mehta",
                         selectedTeam == TeamType.SYSTEMS,
                     )
-                    // SWAPPED: May and Ria positions
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/may.png",
+                        "https://home.maadbots.org/assets/may.png",
                         "May Huynh",
                         selectedTeam == TeamType.MECHANICAL,
                     )
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/ria.png",
+                        "https://home.maadbots.org/assets/ria.png",
                         "Ria Mishra",
                         selectedTeam == TeamType.SOFTWARE,
                     )
@@ -282,19 +281,18 @@ fun Team() {
                                 marginTop(24.px)
                             },
                 ) {
-                    // SWAPPED: Om and Sam positions
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/om.png",
+                        "https://home.maadbots.org/assets/om.png",
                         "Om Gupta",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/sam.png",
+                        "https://home.maadbots.org/assets/sam.png",
                         "Sam",
                         selectedTeam == TeamType.SYSTEMS,
                     )
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/brandon.png",
+                        "https://home.maadbots.org/assets/brandon.png",
                         "Brandon Chiem",
                         selectedTeam == TeamType.MECHANICAL,
                     )
@@ -311,12 +309,12 @@ fun Team() {
                             },
                 ) {
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/shawn.png",
+                        "https://home.maadbots.org/assets/shawn.png",
                         "Shawn Gazin",
                         selectedTeam == TeamType.SOFTWARE,
                     )
                     TeamMemberCard(
-                        "https://maadbots.malefic.xyz/assets/abigail.png",
+                        "https://home.maadbots.org/assets/abigail.png",
                         "Abigail Phan",
                         selectedTeam == TeamType.SYSTEMS,
                     )
