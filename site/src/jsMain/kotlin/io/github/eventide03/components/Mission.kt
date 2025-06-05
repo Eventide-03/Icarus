@@ -69,7 +69,7 @@ fun Mission() {
             }
 
             Img(
-                src = "https://maadbots.malefic.xyz/assets/selfie.png",
+                src = "https://home.maadbots.org/assets/selfie.png",
                 attrs = {
                     attr("alt", "Mission Image")
                     style {

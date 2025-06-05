@@ -59,7 +59,7 @@ fun TopBar() {
                         },
                 ) {
                     Img(
-                        src = "https://maadbots.malefic.xyz/assets/teamlogo.png",
+                        src = "https://home.maadbots.org/assets/teamlogo.png",
                         attrs = {
                             attr("alt", "Logo")
                             classes("top-bar-logo")

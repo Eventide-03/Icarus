@@ -126,7 +126,7 @@ fun Home() {
             }
 
             Img(
-                src = "https://maadbots.malefic.xyz/assets/group-photo.png",
+                src = "https://home.maadbots.org/assets/group-photo.png",
                 attrs = {
                     attr("alt", "Team Group Photo")
                     style {

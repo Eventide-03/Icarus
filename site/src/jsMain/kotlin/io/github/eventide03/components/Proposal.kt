@@ -18,11 +18,11 @@ fun Proposal() {
     // Gallery image sources
     val galleryImages =
         listOf(
-            "https://maadbots.malefic.xyz/assets/cad.png",
-            "https://maadbots.malefic.xyz/assets/sketch.png",
-            "https://maadbots.malefic.xyz/assets/basicsketch.png",
-            "https://maadbots.malefic.xyz/assets/abigailsketch.png",
-            "https://maadbots.malefic.xyz/assets/recap.png",
+            "https://home.maadbots.org/assets/cad.png",
+            "https://home.maadbots.org/assets/sketch.png",
+            "https://home.maadbots.org/assets/basicsketch.png",
+            "https://home.maadbots.org/assets/abigailsketch.png",
+            "https://home.maadbots.org/assets/recap.png",
         )
 
     // State for fullscreen image
@@ -152,7 +152,7 @@ fun Proposal() {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Img(
-                src = "https://maadbots.malefic.xyz/assets/Engineering_Process.png",
+                src = "https://home.maadbots.org/assets/Engineering_Process.png",
                 attrs = {
                     attr("alt", "Robot CAD Design")
                     style {
