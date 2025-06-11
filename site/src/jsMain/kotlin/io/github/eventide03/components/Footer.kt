@@ -77,7 +77,7 @@ fun Footer() {
                     // HCB Logo
                     A(
                         attrs = {
-                            attr("href", "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/donations")
+                            attr("href", "https://hcb.hackclub.com/maadbots/donations")
                             attr("title", "HCB")
                             style {
                                 display(DisplayStyle.Flex)
@@ -182,8 +182,8 @@ fun Footer() {
                     items =
                         listOf(
                             "Financials" to
-                                "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/transactions?action=ledger&controller=events&event_id=m-a-a-d-bots-rival-team",
-                            "Donate" to "https://hcb.hackclub.com/donations/start/m-a-a-d-bots-rival-team",
+                                "https://hcb.hackclub.com/maadbots/transactions",
+                            "Donate" to "https://hcb.hackclub.com/donations/start/maadbots",
                             "Join us" to "#", // Placeholder link
                             "Sponsors" to "#sponsors", // Updated to link to sponsors section specifically
                         ),

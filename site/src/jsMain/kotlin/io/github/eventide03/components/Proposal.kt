@@ -541,7 +541,7 @@ fun Proposal() {
                     attrs = {
                         attr(
                             "href",
-                            "https://hcb.hackclub.com/m-a-a-d-bots-rival-team/transactions?action=ledger&controller=events&event_id=m-a-a-d-bots-rival-team",
+                            "https://hcb.hackclub.com/maadbots/transactions",
                         )
                         attr("target", "_blank")
                         style {
