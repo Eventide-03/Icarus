@@ -1,58 +1,79 @@
-Thank you to OmyDaGreat for providing me with this amazing library for the building of this website through kobweb, and Muntasir Billah for creating a general template on Figma for our reference! <br>
-Figma Template: <br> https://www.figma.com/community/file/1222060007934600841
+# Icarus
 
+Icarus is the official website for M.A.A.D Bots, a startup robotics team dedicated to advancing STEM education and robotics in the Southern California community. Built using [Kobweb](https://github.com/varabyte/kobweb), this site serves as a hub for sharing our mission, showcasing our projects, and connecting with sponsors, mentors, and supporters.
 
-Original README: <br>
-This is a [Kobweb](https://github.com/varabyte/kobweb) project bootstrapped with the `app/empty` template.
+## About M.A.A.D Bots
 
-This template is useful if you already know what you're doing and just want a clean slate. By default, it
-just creates a blank home page (which prints to the console so you can confirm it's working)
+M.A.A.D Bots is a startup robotics team beginning to branch out and influence the Southern California robotics community. Our members are experienced, and have participated in the FRC and FTC robotics competitions. A sponsorship from your company would greatly benefit our cause. Any form of sponsorship, whether of experienced mentors, monetary contributions, or donation of materials alleviates burdens for our team and funds active participation in the community. With your support, our members grow as engineers and leaders, while we expand the local STEM community.
 
-If you are still learning, consider instantiating the `app` template (or one of the examples) to see actual,
-working projects.
+## Features
+
+- Built with Kobweb
+- Live reload for fast development cycles
+- Ready for deployment to static or dynamic hosting providers
 
 ## Getting Started
 
-First, run the development server by typing the following command in a terminal under the `site` folder:
+### Prerequisites
 
-```bash
-$ cd site
-$ kobweb run
-```
+- [Kobweb CLI](https://github.com/varabyte/kobweb)
+- [Java JDK 17+](https://adoptium.net/)
+- [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) (recommended)
 
-Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
+### Installation
 
-You can use any editor you want for the project, but we recommend using **IntelliJ IDEA Community Edition** downloaded
-using the [Toolbox App](https://www.jetbrains.com/toolbox-app/).
+1. Clone the repository:
+    ```bash
+    git clone <your-repo-url>
+    cd icarus
+    ```
 
-Press `Q` in the terminal to gracefully stop the server.
+2. Navigate to the `site` directory and start the development server:
+    ```bash
+    cd site
+    kobweb run
+    ```
 
-### Live Reload
+3. Open [http://localhost:8080](http://localhost:8080) in your browser to view the app.
 
-Feel free to edit / add / delete new components, pages, and API endpoints! When you make any changes, the site will
-indicate the status of the build and automatically reload when ready.
+4. Press `Q` in the terminal to gracefully stop the server.
 
-## Exporting the Project
+### Development
 
-When you are ready to ship, you should shutdown the development server and then export the project using:
+- Edit, add, or remove components, pages, and API endpoints as needed.
+- The site will automatically reload when changes are detected.
+
+### Building for Production
+
+To export the project for production:
 
 ```bash
 kobweb export
 ```
 
-When finished, you can run a Kobweb server in production mode:
+To run in production mode:
 
 ```bash
 kobweb run --env prod
 ```
 
-If you want to run this command in the Cloud provider of your choice, consider disabling interactive mode since nobody
-is sitting around watching the console in that case anyway. To do that, use:
+For cloud deployments, use:
 
 ```bash
 kobweb run --env prod --notty
 ```
 
-Kobweb also supports exporting to a static layout which is compatible with static hosting providers, such as GitHub
-Pages, Netlify, Firebase, any presumably all the others. You can read more about that approach here:
-https://bitspittle.dev/blog/2022/staticdeploy
+Kobweb supports static export for hosting on platforms like GitHub Pages, Netlify, and Firebase. [Learn more](https://bitspittle.dev/blog/2022/staticdeploy).
+
+## Credits
+
+- **OmyDaGreat** – Provided the core library for building this website with Kobweb.
+- **Muntasir Billah** – Created the [Figma template](https://www.figma.com/community/file/1222060007934600841) used as a design reference.
+
+## License
+
+[MIT](LICENSE) (or specify your license here)
+
+---
+Thank you to OmyDaGreat for providing me with this amazing library for the building of this website through kobweb, and Muntasir Billah for creating a general template on Figma for our reference! <br>
+Figma Template: <br> https://www.figma.com/community/file/1222060007934600841
