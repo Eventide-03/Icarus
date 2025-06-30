@@ -30,135 +30,156 @@ fun TopBar() {
                 Modifier
                     .fillMaxWidth()
                     .fillMaxHeight()
-                    .padding(leftRight = 20.px)
                     .styleModifier {
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.Start)
+                        justifyContent(JustifyContent.SpaceBetween)
+                        property("max-width", "95%")
+                        property("padding", "0 2.5% 0 2.5%") // Updated to 2.5%
+                        property("margin-left", "auto")
+                        property("margin-right", "auto")
                     },
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start,
+            horizontalArrangement = Arrangement.SpaceBetween, // Back to SpaceBetween
         ) {
-            // Logo and Text
+            // Left: Logo and Nav
             Row(
                 modifier =
                     Modifier.styleModifier {
                         display(DisplayStyle.Flex)
                         alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.Start)
+                        property("gap", "7%") // ~3% gap between logo and first nav item
+                        property("flex-grow", "1") // Take available space
                     },
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(12.px),
             ) {
-                Link(
-                    path = "#home",
+                // Logo and Text
+                Row(
                     modifier =
                         Modifier.styleModifier {
                             display(DisplayStyle.Flex)
                             alignItems(AlignItems.Center)
+                            property("flex-basis", "12%") // Logo area is ~12% of width
                         },
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.px),
                 ) {
-                    Img(
-                        src = "https://home.maadbots.org/assets/teamlogo.png",
+                    Link(
+                        path = "#home",
+                        modifier =
+                            Modifier.styleModifier {
+                                display(DisplayStyle.Flex)
+                                alignItems(AlignItems.Center)
+                            },
+                    ) {
+                        Img(
+                            src = "https://home.maadbots.org/assets/teamlogo.png",
+                            attrs = {
+                                attr("alt", "Logo")
+                                classes("top-bar-logo")
+                                style {
+                                    height(40.px)
+                                    marginLeft(0.px)
+                                }
+                            },
+                        )
+                    }
+                    P(
                         attrs = {
-                            attr("alt", "Logo")
-                            classes("top-bar-logo")
                             style {
-                                height(40.px)
-                                marginLeft(50.px)
+                                color(Color("#D20041"))
+                                fontSize(24.px)
+                                fontWeight(700)
+                                lineHeight(24.px)
+                                whiteSpace("nowrap")
+                                marginRight(0.px)
                             }
                         },
-                    )
+                    ) {
+                        Text(
+                            "M.A.A.D Bots",
+                        )
+                    }
                 }
-                P(
-                    attrs = {
-                        style {
-                            color(Color("#D20041"))
-                            fontSize(24.px)
-                            fontWeight(700)
-                            lineHeight(24.px)
-                            whiteSpace("nowrap")
-                            marginRight(100.px)
-                        }
-                    },
+                // Navigation Links
+                Row(
+                    modifier =
+                        Modifier.styleModifier {
+                            display(DisplayStyle.Flex)
+                            alignItems(AlignItems.Center)
+                            property("gap", "4%") // 2.5% gap between each nav item
+                            property("margin-right", "5%") // 5% gap before the Contact button
+                            property("flex-grow", "1") // Take remaining space
+                        },
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Text(
-                        "M.A.A.D Bots",
-                    )
+                    val navItems =
+                        mapOf(
+                            "Home" to "#home",
+                            "RIVAL" to "#rival",
+                            "Proposal" to "#proposal",
+                            "Mission" to "#mission",
+                            "Team" to "#team",
+                            "Sponsors" to "#sponsors",
+                            "Branding" to "#branding",
+                        )
+
+                    navItems.forEach { (item, anchor) ->
+                        Link(
+                            path = anchor,
+                            text = item,
+                            modifier =
+                                Modifier.styleModifier {
+                                    color(Color("#F5E5CC"))
+                                    fontSize(17.px)
+                                    fontWeight(500)
+                                    lineHeight(24.px)
+                                    padding(5.px) // Add some padding to increase click area
+                                },
+                        )
+                    }
                 }
             }
-            // Navigation Links
+            // Right: Contact & Contribute Buttons
             Row(
                 modifier =
                     Modifier.styleModifier {
-                        display(DisplayStyle.Flex)
-                        alignItems(AlignItems.Center)
-                        justifyContent(JustifyContent.Start)
+                        property("gap", "5%") // 2% gap between Contact and Contribute
+                        property("flex-basis", "13%") // Buttons take ~13% of width
                     },
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(50.px), // This controls gap between nav items
             ) {
-                val navItems =
-                    mapOf(
-                        "Home" to "#home",
-                        "RIVAL" to "#rival",
-                        "Proposal" to "#proposal",
-                        "Mission" to "#mission",
-                        "Team" to "#team",
-                        "Sponsors" to "#sponsors",
-                        "Branding" to "#branding",
-                    )
-
-                navItems.forEach { (item, anchor) ->
-                    Link(
-                        path = anchor,
-                        text = item,
-                        modifier =
-                            Modifier.styleModifier {
-                                color(Color("#F5E5CC"))
-                                fontSize(17.px)
-                                fontWeight(500)
-                                lineHeight(24.px)
-                            },
-                    )
-                }
-                Row(
-                    modifier = Modifier.styleModifier { gap(20.px) },
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Link(
-                        path = "https://linktr.ee/MAADBots",
-                        text = "Contact",
-                        modifier =
-                            Modifier.styleModifier {
-                                color(Color("#D20041"))
-                                marginLeft(50.px)
-                                fontSize(16.px)
-                                fontWeight(500)
-                                lineHeight(20.px)
-                                padding(10.px, 20.px)
-                                borderRadius(6.px)
-                                textAlign("center")
-                                property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
-                                backgroundColor(Color("#132034"))
-                            },
-                    )
-                    Link(
-                        path = "https://hcb.hackclub.com/maadbots/donations",
-                        text = "Contribute",
-                        modifier =
-                            Modifier.styleModifier {
-                                color(Color("#FFF"))
-                                fontSize(16.px)
-                                fontWeight(500)
-                                lineHeight(24.px)
-                                padding(10.px, 25.px)
-                                borderRadius(6.px)
-                                backgroundColor(Color("#D20041"))
-                                property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
-                            },
-                    )
-                }
+                Link(
+                    path = "https://linktr.ee/MAADBots",
+                    text = "Contact",
+                    modifier =
+                        Modifier.styleModifier {
+                            color(Color("#D20041"))
+                            fontSize(16.px)
+                            fontWeight(500)
+                            lineHeight(20.px)
+                            property("padding", "8px 18px")
+                            borderRadius(6.px)
+                            textAlign("center")
+                            property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                            backgroundColor(Color("#132034"))
+                        },
+                )
+                Link(
+                    path = "https://hcb.hackclub.com/maadbots/donations",
+                    text = "Contribute",
+                    modifier =
+                        Modifier.styleModifier {
+                            color(Color("#FFF"))
+                            fontSize(16.px)
+                            fontWeight(500)
+                            lineHeight(24.px)
+                            property("padding", "8px 22px")
+                            borderRadius(6.px)
+                            backgroundColor(Color("#D20041"))
+                            property("font-feature-settings", "'salt' on, 'liga' off, 'clig' off")
+                        },
+                )
             }
         }
     }
