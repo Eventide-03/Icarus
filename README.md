@@ -70,10 +70,6 @@ Kobweb supports static export for hosting on platforms like GitHub Pages, Netlif
 - **OmyDaGreat** – Provided the core library for building this website with Kobweb.
 - **Muntasir Billah** – Created the [Figma template](https://www.figma.com/community/file/1222060007934600841) used as a design reference.
 
-## License
-
-[MIT](LICENSE) (or specify your license here)
-
 ---
 Thank you to OmyDaGreat for providing me with this amazing library for the building of this website through kobweb, and Muntasir Billah for creating a general template on Figma for our reference! <br>
 Figma Template: <br> https://www.figma.com/community/file/1222060007934600841
