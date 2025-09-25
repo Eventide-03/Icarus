@@ -115,13 +115,15 @@ fun TopBar() {
                 ) {
                     val navItems =
                         mapOf(
-                            "Home" to "#home",
-                            "RIVAL" to "#rival",
-                            "Proposal" to "#proposal",
-                            "Mission" to "#mission",
-                            "Team" to "#team",
-                            "Sponsors" to "#sponsors",
-                            "Branding" to "#branding",
+                            "Home" to "/",
+                            "Calendar" to "/calendar",
+                            "Settings" to "/settings",
+                            "RIVAL" to "/#rival",
+                            "Proposal" to "/#proposal",
+                            "Mission" to "/#mission",
+                            "Team" to "/#team",
+                            "Sponsors" to "/#sponsors",
+                            "Branding" to "/#branding",
                         )
 
                     navItems.forEach { (item, anchor) ->
